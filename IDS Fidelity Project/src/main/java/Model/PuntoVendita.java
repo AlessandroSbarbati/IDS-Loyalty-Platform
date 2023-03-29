@@ -1,0 +1,24 @@
+package Model;
+
+public class PuntoVendita {
+
+    String nome;
+    String partitaIVA;
+    String indirizzo;
+    int codiceAttivita;
+    ProgrammaFedelta pf;
+
+    public PuntoVendita(String nome, String partitaIVA, String indirizzo){
+     this.nome=nome;
+     this.partitaIVA= partitaIVA;
+     this.indirizzo = indirizzo;
+    }
+
+    public int getCodiceAttivita() {
+        return codiceAttivita;
+    }
+
+    void setProgrammaFedelta(ProgrammaFedelta pf) {
+        this.pf= pf;
+    }
+}
