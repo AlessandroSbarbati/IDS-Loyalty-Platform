@@ -10,8 +10,7 @@ public class Cliente extends UtenteAutenticato {
     public Cliente(String nome, String cognome, String dataNascita,
                    String residenza, Integer telefono, String email,String nomeUtente, String password) {
         super(nome, cognome, dataNascita, residenza, telefono , email,nomeUtente, password);
-
-        System.out.println("prova");
+        
     }
     void guadagnaPunti(int punti){
         this.punti += punti;
