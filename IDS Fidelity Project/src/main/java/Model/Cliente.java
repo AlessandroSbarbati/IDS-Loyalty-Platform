@@ -11,7 +11,7 @@ public class Cliente extends UtenteAutenticato {
                    String residenza, Integer telefono, String email,String nomeUtente, String password) {
         super(nome, cognome, dataNascita, residenza, telefono , email,nomeUtente, password);
 
-
+        System.out.println("prova");
     }
     void guadagnaPunti(int punti){
         this.punti += punti;
@@ -22,4 +22,5 @@ public class Cliente extends UtenteAutenticato {
     public void setCodiceTessera(int codiceTessera) {
         this.codiceTessera = codiceTessera;
     }
+
 }
