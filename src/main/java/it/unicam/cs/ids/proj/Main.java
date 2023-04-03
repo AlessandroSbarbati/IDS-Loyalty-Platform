@@ -13,7 +13,9 @@ import java.sql.SQLException;
 
 
 public class Main {
-
+    /*
+    ciao sono wal
+     */
     private final static String URL = "jdbc:mysql://localhost:3306/test?";
     private final static String USER = "admin";
     private final static String PASSWORD = "admin";
