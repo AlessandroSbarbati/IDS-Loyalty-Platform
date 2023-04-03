@@ -1,1 +1,0 @@
-# IDS-Loyalty-Platform
