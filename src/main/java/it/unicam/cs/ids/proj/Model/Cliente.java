@@ -1,8 +1,7 @@
 package it.unicam.cs.ids.proj.Model;
 
-import java.util.Date;
 
-public class Cliente extends Model.UtenteAutenticato {
+public class Cliente extends UtenteAutenticato {
 
     int punti;
     long codiceTessera;

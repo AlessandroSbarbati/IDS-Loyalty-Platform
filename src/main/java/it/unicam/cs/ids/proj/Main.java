@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.proj;
 
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
-import it.unicam.cs.ids.proj.View.AutenticazioneView;
+import it.unicam.cs.ids.proj.View.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -38,7 +38,7 @@ public class Main {
         catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 
-            AutenticazioneView init = new AutenticazioneView();
+            View.AutenticazioneView init = new View.AutenticazioneView();
         }
     }
 }

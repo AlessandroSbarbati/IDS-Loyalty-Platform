@@ -18,8 +18,8 @@ public class DBpiattaforma {
     private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final static ArrayList<Cliente> clienti= new ArrayList<>();
     private final static String DROP_TABLE = "DROP TABLE IF EXISTS clienti";
-    private final static String CREATE_TABLE = "CREATE TABLE clienti (\n" +
-            clienti + "\n );";
+    /*private final static String CREATE_TABLE = "CREATE TABLE clienti (\n" +
+            clienti + "\n );";*/
     private final static String INSERT = "INSERT INTO clienti " + "(clienti) values (?)";
     private final static String SELECT = "SELECT * from clienti";
 
