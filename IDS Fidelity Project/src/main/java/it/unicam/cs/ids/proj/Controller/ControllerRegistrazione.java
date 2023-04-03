@@ -1,23 +1,20 @@
-package it.unicam.cs.ids.proj.Controller;
+package Controller;
 
-import it.unicam.cs.ids.proj.DB.DBpiattaforma;
-import it.unicam.cs.ids.proj.View.AutenticazioneView;
-import it.unicam.cs.ids.proj.Model.Cliente;
-import it.unicam.cs.ids.proj.Model.Proprietario;
-import it.unicam.cs.ids.proj.Model.PuntoVendita;
-import it.unicam.cs.ids.proj.Model.Staff;
+import DB.DBpiattaforma;
+import Model.*;
+import View.AutenticazioneView;
 
 
 public class ControllerRegistrazione {
 
 
     AutenticazioneView autenticazione;
-    public ControllerRegistrazione(AutenticazioneView autenticazione) {
-        this.autenticazione = autenticazione;
+    public ControllerRegistrazione() {
+        autenticazione = new AutenticazioneView();
         autenticazione.accesso();
     }
 
-    public void nuovoStaff() {
+    public Staff nuovoStaff() {
 
         DBpiattaforma.addStaff(new Staff(
                 autenticazione.inserisciNome(),
@@ -28,13 +25,12 @@ public class ControllerRegistrazione {
                 autenticazione.inserisciEmail(),
                 autenticazione.inserisciNomeUtente(),
                 autenticazione.inserisciPassword(),
-                autenticazione.inserisciCodiceAttivita()
-        ));
+                ));
     }
 
-    public void nuovoProprietario() {
+    public Proprietario nuovoProp() {
 
-        DBpiattaforma.addProprietario( new Proprietario(
+                DBpiattaforma.addProp( new Proprietario(
                 autenticazione.inserisciNome(),
                 autenticazione.inserisciCognome(),
                 autenticazione.inserisciDataDiNascita(),
@@ -42,27 +38,26 @@ public class ControllerRegistrazione {
                 autenticazione.inserisciTelefono(),
                 autenticazione.inserisciEmail(),
                 autenticazione.inserisciNomeUtente(),
-                autenticazione.inserisciPassword(),
+                autenticazione.inserisciResidenza(),
                 autenticazione.inserisciPartitaIVA()));
     }
 
     public void nuovoCliente() {
         DBpiattaforma.addCliente(new Cliente(autenticazione.inserisciNome(),
-                autenticazione.inserisciCognome(),
-                autenticazione.inserisciDataDiNascita(),
-                autenticazione.inserisciResidenza(),
-                autenticazione.inserisciTelefono(),
-                autenticazione.inserisciEmail(),
-                autenticazione.inserisciNomeUtente(),
-                autenticazione.inserisciPassword()));
+                             autenticazione.inserisciCognome(),
+                             autenticazione.inserisciDataDiNascita(),
+                             autenticazione.inserisciResidenza(),
+                             autenticazione.inserisciTelefono(),
+                             autenticazione.inserisciEmail(),
+                             autenticazione.inserisciNomeUtente(),
+                             autenticazione.inserisciResidenza()));
     }
 
     public void nuovoPuntoVendita(){
+        autenticazione.inserisciNome(),
+        autenticazione.inserisciIndirizzo(),
+        autenticazione.inserisciPartitaIVA();
 
-        DBpiattaforma.addPuntoVendita(new PuntoVendita(
-                autenticazione.inserisciNome(),
-                autenticazione.inserisciIndirizzo(),
-                autenticazione.inserisciPartitaIVA()));
     }
 
 

@@ -1,4 +1,6 @@
-package it.unicam.cs.ids.proj.Model;
+package Model;
+
+import java.util.Date;
 
 public class Proprietario extends UtenteAutenticato {
     private Integer partitaIVA;

@@ -1,4 +1,4 @@
-package it.unicam.cs.ids.proj.Model;
+package Model;
 
 public interface iUtente {
 
