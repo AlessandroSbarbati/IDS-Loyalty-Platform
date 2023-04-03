@@ -1,10 +1,7 @@
-package View;
+package it.unicam.cs.ids.proj.View;
 
-import Controller.ControllerRegistrazione;
-import Model.Cliente;
-import Model.UtenteAutenticato;
+import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AutenticazioneView {
@@ -14,8 +11,8 @@ public class AutenticazioneView {
 
     public AutenticazioneView() {
         scanner = new Scanner(System.in);
-         controller = new ControllerRegistrazione();
-        }
+        controller = new ControllerRegistrazione(this);
+    }
 
 
     public void accesso(){
@@ -38,11 +35,13 @@ public class AutenticazioneView {
             case 1:
                 controller.nuovoCliente();
             case 2:
-                controller.nuovoProp();
+                controller.nuovoProprietario();
         }
     }
 
-    private void login() {}
+    private void login() {
+
+    }
 
     public String inserisciNome() {
         System.out.println(" Inserisci il tuo nome : ");
@@ -95,4 +94,3 @@ public class AutenticazioneView {
         return scanner.nextInt();
     }
 }
-
