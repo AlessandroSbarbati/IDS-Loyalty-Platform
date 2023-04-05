@@ -1,14 +1,14 @@
-package it.unicam.cs.ids.proj.View;
+/*package it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.View;
 
-import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
-import it.unicam.cs.ids.proj.Controller.*;
+import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.ControllerProprietario;
+import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.*;
 
 import java.util.Scanner;
 
 public class MainView {
 
     Scanner scanner;
-    Controller.ControllerRegistrazione controllerR;
+    ControllerRegistrazione controllerR;
     ControllerProprietario controllerP;
 
     public MainView() {
@@ -28,4 +28,4 @@ public class MainView {
 
         }
     }
-}
+*/

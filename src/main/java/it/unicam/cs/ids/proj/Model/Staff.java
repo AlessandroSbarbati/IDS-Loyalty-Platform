@@ -1,6 +1,6 @@
 package it.unicam.cs.ids.proj.Model;
 
-public class Staff extends Model.UtenteAutenticato {
+public class Staff extends UtenteAutenticato {
 
     private PuntoVendita attivita;
 

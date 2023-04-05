@@ -1,8 +1,8 @@
-/*package DB;
+/*package it.unicam.cs.ids.proj.DB;
 
-import Model.Cliente;
-import Model.Proprietario;
-import Model.PuntoVendita;
+import it.unicam.cs.ids.proj.Model.Cliente;
+import it.unicam.cs.ids.proj.Model.Proprietario;
+import it.unicam.cs.ids.proj.Model.PuntoVendita;
 
 import java.util.ArrayList;
 import java.util.Date;

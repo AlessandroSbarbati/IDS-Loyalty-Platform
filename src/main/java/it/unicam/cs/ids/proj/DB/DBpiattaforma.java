@@ -1,27 +1,30 @@
 package it.unicam.cs.ids.proj.DB;
 
 
-import it.unicam.cs.ids.proj.Main;
-import it.unicam.cs.ids.proj.Model.Cliente;
-import it.unicam.cs.ids.proj.Model.Staff;
-
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DBpiattaforma {
 
-    private final static String URL = "jdbc:mysql://localhost:3306/test?";
-    private final static String USER = "admin";
-    private final static String PASSWORD = "admin";
-    private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private final static ArrayList<Cliente> clienti= new ArrayList<>();
-    private final static String DROP_TABLE = "DROP TABLE IF EXISTS clienti";
-    /*private final static String CREATE_TABLE = "CREATE TABLE clienti (\n" +
-            clienti + "\n );";*/
-    private final static String INSERT = "INSERT INTO clienti " + "(clienti) values (?)";
-    private final static String SELECT = "SELECT * from clienti";
+    private final static String URL = "jdbc:mysql://localhost:3306/piattaforma?";
+    private final static String USER = "root";
+    private final static String PASSWORD = "AleWalo1!";
+    public static Connection conn;
+
+    public static void init() {
+        try {
+            Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            conn = DriverManager.getConnection(URL,USER,PASSWORD);
+            System.out.println("Connesso");
+        } catch (SQLException e) {
+            throw new IllegalStateException("Non connesso");
+        }
+    }
+
+    public static void insertQuery(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        statement.executeUpdate(query);
+
+    }
 
           /*      pstmt.setString(1, "dog");
                 pstmt.execute();
@@ -35,7 +38,7 @@ public class DBpiattaforma {
                         System.out.println("--------------------------------------");
                     }
                 }
-           */
+
 
     public void addCliente(Cliente cliente) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -45,7 +48,7 @@ public class DBpiattaforma {
             pstmt.setObject(1, cliente);
             pstmt.execute();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(it.unicam.cs.ids.proj.Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -57,7 +60,7 @@ public class DBpiattaforma {
             pstmt.setObject(1, staff);
             pstmt.execute();}
         catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(it.unicam.cs.ids.proj.Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
@@ -73,7 +76,7 @@ public class DBpiattaforma {
 
 
 
-    /* static ArrayList<PuntoVendita> listaPuntiVendita;
+     static ArrayList<PuntoVendita> listaPuntiVendita;
     static ArrayList<Cliente> listaClienti;
     static ArrayList<Proprietario> listaProprietari;
     static ArrayList<Staff> listaStaff;

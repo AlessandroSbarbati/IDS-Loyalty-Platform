@@ -1,24 +1,15 @@
-package View;
+package it.unicam.cs.ids.proj.View;
 
-import Controller.ControllerRegistrazione;
-import Model.Cliente;
-import Model.UtenteAutenticato;
+import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.Scanner;
 
-public class AutenticazioneView {
+public class InitView {
 
-    Scanner scanner;
-    ControllerRegistrazione controller;
+    static Scanner scanner = new Scanner(System.in);
 
-    public AutenticazioneView() {
-        scanner = new Scanner(System.in);
-         controller = new ControllerRegistrazione();
-        }
-
-
-    public void accesso(){
+    public void accesso() throws SQLException {
         System.out.println("Premere 1 per effettuare la registrazione \n");
         System.out.println("Premere 2 per effettuare il login \n");
         int sceltaUtente = scanner.nextInt();
@@ -30,67 +21,69 @@ public class AutenticazioneView {
         }
     }
 
-    private void sceltaProfilo() {
+    private void sceltaProfilo() throws SQLException {
         System.out.println("Premere 1 per registrarti come cliente \n");
         System.out.println("Premere 2 per registrarti come proprietario \n");
         int sceltaUtente = scanner.nextInt();
+        scanner.nextLine();
         switch (sceltaUtente) {
             case 1:
-                controller.nuovoCliente();
+                ControllerRegistrazione.nuovoCliente();
+                break;
             case 2:
-                controller.nuovoProp();
+                System.out.println("nuovo Proprietario");
         }
     }
 
     private void login() {}
 
-    public String inserisciNome() {
+    public static String inserisciNome() {
         System.out.println(" Inserisci il tuo nome : ");
         return scanner.nextLine();
     }
-    public String inserisciCognome() {
+    public static String inserisciCognome() {
         System.out.println(" Inserisci il tuo cognome : ");
         return scanner.nextLine();
     }
 
-    public String inserisciDataDiNascita() {
+    public static String inserisciDataNascita() {
         System.out.println(" Inserisci la tua data di nascita : ");
         return scanner.nextLine();
     }
 
-    public String inserisciResidenza() {
+    public static String inserisciResidenza() {
         System.out.println(" Inserisci la tua residenza : ");
         return scanner.nextLine();
     }
-    public Integer inserisciTelefono() {
+    public static String inserisciTelefono() {
         System.out.println(" Inserisci il tuo numero di telefono : ");
-        return scanner.nextInt();
+        return scanner.nextLine();
     }
-    public String inserisciEmail() {
+    public static String inserisciEmail() {
         System.out.println(" Inserisci la tua email : ");
         return scanner.nextLine();
     }
-    public String inserisciNomeUtente() {
+    public static String inserisciNomeUtente() {
         System.out.println(" Inserisci il tuo nome utente : ");
         return scanner.nextLine();
     }
 
-    public String inserisciPassword() {
+    public static String inserisciPassword() {
         System.out.println(" Inserisci la tua password : ");
         return scanner.nextLine();
     }
 
-    public Integer inserisciPartitaIVA() {
+    public static Integer inserisciPartitaIVA() {
         System.out.println(" Inserisci la tua partita iva : ");
         return scanner.nextInt();
     }
 
-    public String inserisciIndirizzo() {
+    public static String inserisciIndirizzo() {
         System.out.println(" Inserisci l'indirizzo del tuo punto vendita : ");
         return scanner.nextLine();
     }
 
-    public int inserisciCodiceAttivita() {
+    public static int inserisciCodiceAttivita() {
         System.out.println(" Inserisci il codice del punto vendita dove l'utente lavora : ");
         return scanner.nextInt();
     }
