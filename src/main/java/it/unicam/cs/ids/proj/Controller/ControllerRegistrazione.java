@@ -1,13 +1,13 @@
 package it.unicam.cs.ids.proj.Controller;
 
 
-import View.AutenticazioneView;
+import it.unicam.cs.ids.proj.View.AutenticazioneView;
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
 import it.unicam.cs.ids.proj.Model.*;
 
 
 public class ControllerRegistrazione {
-/*
+
 
     AutenticazioneView autenticazione;
     public ControllerRegistrazione() {
@@ -26,12 +26,14 @@ public class ControllerRegistrazione {
                 autenticazione.inserisciEmail(),
                 autenticazione.inserisciNomeUtente(),
                 autenticazione.inserisciPassword(),
-                ));
+                autenticazione.inserisciCodiceAttivita()
+        ));
+        return null;
     }
 
     public Proprietario nuovoProp() {
 
-                DBpiattaforma.addProp( new Model.Proprietario(
+                DBpiattaforma.addProp( new Proprietario(
                 autenticazione.inserisciNome(),
                 autenticazione.inserisciCognome(),
                 autenticazione.inserisciDataDiNascita(),
@@ -41,6 +43,7 @@ public class ControllerRegistrazione {
                 autenticazione.inserisciNomeUtente(),
                 autenticazione.inserisciResidenza(),
                 autenticazione.inserisciPartitaIVA()));
+                return null;
     }
 
     public void nuovoCliente() {
@@ -55,11 +58,10 @@ public class ControllerRegistrazione {
     }
 
     public void nuovoPuntoVendita(){
-        autenticazione.inserisciNome(),
+     /*   autenticazione.inserisciNome(),
         autenticazione.inserisciIndirizzo(),
-        autenticazione.inserisciPartitaIVA();
-
-    }*/
+        autenticazione.inserisciPartitaIVA();*/
+    }
 
 
 

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MainView {
 
     Scanner scanner;
-    Controller.ControllerRegistrazione controllerR;
+    ControllerRegistrazione controllerR;
     ControllerProprietario controllerP;
 
     public MainView() {

@@ -3,6 +3,7 @@ package it.unicam.cs.ids.proj.DB;
 
 import it.unicam.cs.ids.proj.Main;
 import it.unicam.cs.ids.proj.Model.Cliente;
+import it.unicam.cs.ids.proj.Model.Proprietario;
 import it.unicam.cs.ids.proj.Model.Staff;
 
 import java.sql.*;
@@ -23,6 +24,9 @@ public class DBpiattaforma {
     private final static String INSERT = "INSERT INTO clienti " + "(clienti) values (?)";
     private final static String SELECT = "SELECT * from clienti";
 
+    public static void addProp(Proprietario proprietario) {
+    }
+
           /*      pstmt.setString(1, "dog");
                 pstmt.execute();
                 pstmt.setString(1, "cat");
@@ -37,7 +41,7 @@ public class DBpiattaforma {
                 }
            */
 
-    public void addCliente(Cliente cliente) {
+    public static void addCliente(Cliente cliente) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              Statement stmt = conn.createStatement();
              PreparedStatement pstmt = conn.prepareStatement(INSERT);) {
@@ -49,7 +53,7 @@ public class DBpiattaforma {
         }
     }
 
-    public void addStaff(Staff staff) {
+    public static void addStaff(Staff staff) {
         try(  Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
               Statement stmt = conn.createStatement();
               PreparedStatement pstmt = conn.prepareStatement(INSERT);) {

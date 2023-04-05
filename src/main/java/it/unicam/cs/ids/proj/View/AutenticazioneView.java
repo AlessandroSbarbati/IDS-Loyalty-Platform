@@ -1,8 +1,8 @@
-package View;
+package it.unicam.cs.ids.proj.View;
 
-import Controller.ControllerRegistrazione;
-import Model.Cliente;
-import Model.UtenteAutenticato;
+import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
+import it.unicam.cs.ids.proj.Model.Cliente;
+import it.unicam.cs.ids.proj.Model.UtenteAutenticato;
 
 import java.util.ArrayList;
 import java.util.Scanner;
