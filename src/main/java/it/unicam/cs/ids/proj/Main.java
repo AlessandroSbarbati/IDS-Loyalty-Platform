@@ -38,7 +38,7 @@ public class Main {
         catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 
-            View.AutenticazioneView init = new View.AutenticazioneView();
+            AutenticazioneView init = new AutenticazioneView();
         }
     }
 }
