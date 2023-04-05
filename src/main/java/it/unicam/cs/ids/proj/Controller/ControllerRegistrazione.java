@@ -1,68 +1,39 @@
 package it.unicam.cs.ids.proj.Controller;
 
-
-import it.unicam.cs.ids.proj.View.AutenticazioneView;
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
-import it.unicam.cs.ids.proj.Model.*;
+import it.unicam.cs.ids.proj.View.InitView;
+
+import java.sql.SQLException;
 
 
 public class ControllerRegistrazione {
 
 
-    AutenticazioneView autenticazione;
-    public ControllerRegistrazione() {
-        autenticazione = new AutenticazioneView();
-        autenticazione.accesso();
+    public static void nuovoProprietario() throws SQLException {
+
+        String query = "INSERT into proprietari ( nome, cognome, dataNascita, residenza, telefono," +
+                " email, nomeUtente, password) VALUES('" + InitView.inserisciNome()
+                + "','" + InitView.inserisciCognome()
+                + "','" + InitView.inserisciDataNascita()
+                + "','" + InitView.inserisciResidenza()
+                + "','" + InitView.inserisciTelefono()
+                + "','" + InitView.inserisciEmail()
+                + "','" + InitView.inserisciNomeUtente()
+                + "','" + InitView.inserisciPassword() + "')";
+        DBpiattaforma.insertQuery(query);
     }
 
-    public Staff nuovoStaff() {
-
-        DBpiattaforma.addStaff(new Staff(
-                autenticazione.inserisciNome(),
-                autenticazione.inserisciCognome(),
-                autenticazione.inserisciDataDiNascita(),
-                autenticazione.inserisciResidenza(),
-                autenticazione.inserisciTelefono(),
-                autenticazione.inserisciEmail(),
-                autenticazione.inserisciNomeUtente(),
-                autenticazione.inserisciPassword(),
-                autenticazione.inserisciCodiceAttivita()
-        ));
-        return null;
+    public static void nuovoCliente() throws SQLException {
+        String query = "INSERT into clienti ( nome, cognome, dataNascita, residenza, telefono," +
+                " email, nomeUtente, pwd) VALUES('" + InitView.inserisciNome()
+                + "','" + InitView.inserisciCognome()
+                + "','" + InitView.inserisciDataNascita()
+                + "','" + InitView.inserisciResidenza()
+                + "','" + InitView.inserisciTelefono()
+                + "','" + InitView.inserisciEmail()
+                + "','" + InitView.inserisciNomeUtente()
+                + "','" + InitView.inserisciPassword() + "')";
+        DBpiattaforma.insertQuery(query);
     }
-
-    public Proprietario nuovoProp() {
-
-                DBpiattaforma.addProp( new Proprietario(
-                autenticazione.inserisciNome(),
-                autenticazione.inserisciCognome(),
-                autenticazione.inserisciDataDiNascita(),
-                autenticazione.inserisciResidenza(),
-                autenticazione.inserisciTelefono(),
-                autenticazione.inserisciEmail(),
-                autenticazione.inserisciNomeUtente(),
-                autenticazione.inserisciResidenza(),
-                autenticazione.inserisciPartitaIVA()));
-                return null;
-    }
-
-    public void nuovoCliente() {
-        DBpiattaforma.addCliente(new Cliente(autenticazione.inserisciNome(),
-                             autenticazione.inserisciCognome(),
-                             autenticazione.inserisciDataDiNascita(),
-                             autenticazione.inserisciResidenza(),
-                             autenticazione.inserisciTelefono(),
-                             autenticazione.inserisciEmail(),
-                             autenticazione.inserisciNomeUtente(),
-                             autenticazione.inserisciResidenza()));
-    }
-
-    public void nuovoPuntoVendita(){
-     /*   autenticazione.inserisciNome(),
-        autenticazione.inserisciIndirizzo(),
-        autenticazione.inserisciPartitaIVA();*/
-    }
-
-
 
 }

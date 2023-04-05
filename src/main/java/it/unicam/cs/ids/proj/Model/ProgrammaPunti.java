@@ -1,4 +1,8 @@
 package it.unicam.cs.ids.proj.Model;
 
-public class ProgrammaPunti {
+public class ProgrammaPunti extends ProgrammaFedelta{
+
+    public ProgrammaPunti() {
+        super();
+    }
 }
