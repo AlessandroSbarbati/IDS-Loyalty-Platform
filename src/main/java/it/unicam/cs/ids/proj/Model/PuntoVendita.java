@@ -6,7 +6,7 @@ public class PuntoVendita {
     String partitaIVA;
     String indirizzo;
     int codiceAttivita;
-    it.unicam.cs.ids.proj.Model.ProgrammaFedelta pf;
+    Model.ProgrammaFedelta pf;
 
     public PuntoVendita(String nome, String partitaIVA, String indirizzo){
      this.nome=nome;
@@ -18,7 +18,7 @@ public class PuntoVendita {
         return codiceAttivita;
     }
 
-    void setProgrammaFedelta(it.unicam.cs.ids.proj.Model.ProgrammaFedelta pf) {
+    void setProgrammaFedelta(Model.ProgrammaFedelta pf) {
         this.pf= pf;
     }
 }
