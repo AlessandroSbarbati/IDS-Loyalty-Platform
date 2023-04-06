@@ -5,6 +5,9 @@ import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class AutenticazioneView {
 
     static Scanner scanner = new Scanner(System.in);

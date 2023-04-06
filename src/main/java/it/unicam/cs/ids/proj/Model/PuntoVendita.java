@@ -1,5 +1,8 @@
 package it.unicam.cs.ids.proj.Model;
 
+/**
+ *
+ */
 public class PuntoVendita {
 
     String nome;

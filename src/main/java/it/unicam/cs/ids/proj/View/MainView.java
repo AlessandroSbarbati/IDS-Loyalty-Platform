@@ -4,7 +4,7 @@ import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.ControllerPropriet
 import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.*;
 
 import java.util.Scanner;
-
+comment
 public class MainView {
 
     Scanner scanner;

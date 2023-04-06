@@ -1,6 +1,8 @@
 package it.unicam.cs.ids.proj.Model;
 
-
+/**
+ *
+ */
 public class Cliente extends UtenteAutenticato {
 
     int punti;

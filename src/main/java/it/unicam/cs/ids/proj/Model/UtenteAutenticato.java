@@ -1,5 +1,8 @@
 package it.unicam.cs.ids.proj.Model;
 
+/**
+ *
+ */
 public abstract class UtenteAutenticato implements iUtente {
     String nome;
     String cognome;

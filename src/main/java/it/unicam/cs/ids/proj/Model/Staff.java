@@ -1,5 +1,8 @@
 package it.unicam.cs.ids.proj.Model;
 
+/**
+ *
+ */
 public class Staff extends UtenteAutenticato {
 
     private int attivita;
