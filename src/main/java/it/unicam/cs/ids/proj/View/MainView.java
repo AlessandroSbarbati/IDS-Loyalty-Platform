@@ -4,7 +4,7 @@ import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
 import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
 import java.sql.SQLException;
 import java.util.Scanner;
-comment
+
 public class MainView {
 
     static Scanner scanner = new Scanner(System.in);
