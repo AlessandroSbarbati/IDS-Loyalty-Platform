@@ -1,7 +1,7 @@
-/*package it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.View;
+package it.unicam.cs.ids.proj.View;
 
-import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.ControllerProprietario;
-import it.unicam.cs.ids.proj.it.unicam.cs.ids.proj.Controller.*;
+import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
+import it.unicam.cs.ids.proj.Controller.*;
 
 import java.util.Scanner;
 comment
@@ -28,4 +28,4 @@ public class MainView {
 
         }
     }
-*/
+}

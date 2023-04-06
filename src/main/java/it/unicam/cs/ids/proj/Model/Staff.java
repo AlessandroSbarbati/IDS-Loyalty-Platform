@@ -5,13 +5,13 @@ package it.unicam.cs.ids.proj.Model;
  */
 public class Staff extends UtenteAutenticato {
 
-    private int attivita;
+    private String codiceAttivita;
 
-    public Staff(String nome, String cognome, String dataNascita,
-                 String residenza, Integer telefono, String email,
-                 String nomeUtente, String password, int attivita) {
-        super(nome, cognome, dataNascita, residenza, telefono, email, nomeUtente, password);
-        this.attivita = attivita;
+    public Staff(String nome, String cognome,
+                 String residenza, String email,
+                 String nomeUtente, String password, String codiceAttivita) {
+        super(nome, cognome, residenza, email, nomeUtente, password);
+        this.codiceAttivita = codiceAttivita;
     }
 
 }

@@ -28,7 +28,6 @@ public class DBpiattaforma {
     }
 
           /*      pstmt.setString(1, "dog");
-          commit prova
                 pstmt.execute();
                 pstmt.setString(1, "cat");
                 pstmt.execute();

@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.proj;
 
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
-import it.unicam.cs.ids.proj.View.AutenticazioneView;
+import it.unicam.cs.ids.proj.View.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,12 +27,16 @@ public class Main {
     private final static String INSERT = "INSERT INTO animals " + "(name) values (?)";
     private final static String SELECT = "SELECT * from animals";
 
-    public static void main(String[] args) throws SQLException {
-        DBpiattaforma.init();
-        AutenticazioneView view = new AutenticazioneView();
-        view.accesso();
-    }
-}
+    public static void main(String[] args) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             Statement stmt = conn.createStatement();
+             PreparedStatement pstmt = conn.prepareStatement(INSERT);) {
+            Class.forName(DRIVER);
+            stmt.executeUpdate(DROP_TABLE);
+            stmt.executeUpdate(CREATE_TABLE);
+        }
+        catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 
             AutenticazioneView init = new AutenticazioneView();
         }
