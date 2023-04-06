@@ -23,7 +23,6 @@ public class ControllerProprietario {
         String query = "SELECT * from proprietari where nomeUtente = '"
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
                 + AutenticazioneView.inserisciPassword() + "'";
-        System.out.println(query);
         ResultSet rs = DBpiattaforma.executeQuery(query);
         while(rs.next())
         proprietario = new Proprietario(
