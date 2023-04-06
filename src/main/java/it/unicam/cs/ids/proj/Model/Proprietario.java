@@ -1,15 +1,17 @@
-package Model;
-
-import java.util.Date;
+package it.unicam.cs.ids.proj.Model;
 
 public class Proprietario extends UtenteAutenticato {
-    private Integer partitaIVA;
+    private String partitaIVA;
 
-    public Proprietario(String nome, String cognome, String dataNascita,
-                        String residenza, Integer telefono, String email,
-                        String nomeUtente, String password, Integer partitaIVA) {
-        super(nome, cognome, dataNascita, residenza, telefono, email, nomeUtente, password);
+    public Proprietario(String nome, String cognome,
+                        String residenza, String email,
+                        String nomeUtente, String password, String partitaIVA) {
+        super(nome, cognome, residenza, email, nomeUtente, password);
         this.partitaIVA = partitaIVA;
+
     }
 
+    public String getPartitaIVA() {
+        return partitaIVA;
+    }
 }
