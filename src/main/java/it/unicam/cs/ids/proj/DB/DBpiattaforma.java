@@ -2,9 +2,6 @@ package it.unicam.cs.ids.proj.DB;
 
 import java.sql.*;
 
-/**
- *
- */
 public class DBpiattaforma {
 
     private final static String URL = "jdbc:mysql://localhost:3306/piattaforma?";
@@ -25,6 +22,12 @@ public class DBpiattaforma {
     public static void insertQuery(String query) throws SQLException {
         Statement statement = conn.createStatement();
         statement.executeUpdate(query);
+
+    }
+
+    public static ResultSet executeQuery(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        return statement.executeQuery(query);
 
     }
 

@@ -25,6 +25,7 @@ public class ControllerProprietario {
                 + AutenticazioneView.inserisciPassword() + "'";
         System.out.println(query);
         ResultSet rs = DBpiattaforma.executeQuery(query);
+        while(rs.next())
         proprietario = new Proprietario(
                 (rs.getString("nome")),
                 (rs.getString("cognome")),
@@ -33,7 +34,7 @@ public class ControllerProprietario {
                 (rs.getString("nomeUtente")),
                 (rs.getString("pwd")),
                 (rs.getString("partitaIVA")));
-System.out.println(proprietario.getNome() + proprietario.getCognome());
+        System.out.println(proprietario.getNome() + proprietario.getCognome());
         MainView.azioniProprietario();
     }
 
@@ -46,3 +47,4 @@ System.out.println(proprietario.getNome() + proprietario.getCognome());
     public static void nuovoProgrammaLivelli() {
     }
 }
+

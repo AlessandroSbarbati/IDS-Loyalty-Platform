@@ -1,10 +1,10 @@
 package it.unicam.cs.ids.proj.View;
 
+import it.unicam.cs.ids.proj.Controller.ControllerCliente;
+import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
 import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
-import it.unicam.cs.ids.proj.Model.Cliente;
-import it.unicam.cs.ids.proj.Model.UtenteAutenticato;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -12,90 +12,103 @@ import java.util.Scanner;
  */
 public class AutenticazioneView {
 
-    Scanner scanner;
-    ControllerRegistrazione controller;
+    static Scanner scanner = new Scanner(System.in);
 
-    public AutenticazioneView() {
-        scanner = new Scanner(System.in);
-         controller = new ControllerRegistrazione();
-        }
-
-
-    public void accesso(){
+    public void accesso() throws SQLException {
         System.out.println("Premere 1 per effettuare la registrazione \n");
         System.out.println("Premere 2 per effettuare il login \n");
-        int sceltaUtente = scanner.nextInt();
-        switch (sceltaUtente) {
+
+        switch (provaScannerInt()) {
             case 1:
-                sceltaProfilo();
+                sceltaProfilo(); break;
             case 2:
                 login();
         }
     }
 
-    private void sceltaProfilo() {
-        System.out.println("Premere 1 per registrarti come cliente \n");
-        System.out.println("Premere 2 per registrarti come proprietario \n");
-        int sceltaUtente = scanner.nextInt();
-        switch (sceltaUtente) {
+    private void login() throws SQLException {
+        System.out.println("Premere 1 per eseguire il login cliente \n");
+        System.out.println("Premere 2 per eseguire il login proprietario \n");
+
+        switch (provaScannerInt()) {
             case 1:
-                controller.nuovoCliente();
+                ControllerCliente.loginCliente();
+                break;
             case 2:
-                controller.nuovoProp();
+                ControllerProprietario.loginProprietario();
+
         }
     }
 
-    private void login() {}
+    private void sceltaProfilo() throws SQLException {
+        System.out.println("Premere 1 per registrarti come cliente \n");
+        System.out.println("Premere 2 per registrarti come proprietario \n");
 
-    public String inserisciNome() {
-        System.out.println(" Inserisci il tuo nome : ");
-        return scanner.nextLine();
-    }
-    public String inserisciCognome() {
-        System.out.println(" Inserisci il tuo cognome : ");
-        return scanner.nextLine();
-    }
-
-    public String inserisciDataDiNascita() {
-        System.out.println(" Inserisci la tua data di nascita : ");
-        return scanner.nextLine();
+        switch (provaScannerInt()) {
+            case 1:
+                ControllerRegistrazione.nuovoCliente();
+                break;
+            case 2:
+                ControllerRegistrazione.nuovoProprietario();
+        }
     }
 
-    public String inserisciResidenza() {
+
+
+
+    public static String inserisciNome() {
+        System.out.println(" Inserisci il nome : ");
+        return scanner.nextLine();
+    }
+    public static String inserisciCognome() {
+        System.out.println(" Inserisci il cognome : ");
+        return scanner.nextLine();
+    }
+    public static String inserisciResidenza() {
         System.out.println(" Inserisci la tua residenza : ");
         return scanner.nextLine();
     }
-    public Integer inserisciTelefono() {
-        System.out.println(" Inserisci il tuo numero di telefono : ");
-        return scanner.nextInt();
-    }
-    public String inserisciEmail() {
+    public static String inserisciEmail() {
         System.out.println(" Inserisci la tua email : ");
         return scanner.nextLine();
     }
-    public String inserisciNomeUtente() {
-        System.out.println(" Inserisci il tuo nome utente : ");
+    public static String inserisciNomeUtente() {
+        System.out.println(" Inserisci il nome utente : ");
         return scanner.nextLine();
     }
 
-    public String inserisciPassword() {
-        System.out.println(" Inserisci la tua password : ");
+    public static String inserisciPassword() {
+        System.out.println(" Inserisci la password : ");
         return scanner.nextLine();
     }
 
-    public Integer inserisciPartitaIVA() {
+    public static String inserisciPartitaIVA() {
         System.out.println(" Inserisci la tua partita iva : ");
-        return scanner.nextInt();
+        return scanner.nextLine();
     }
 
-    public String inserisciIndirizzo() {
+    public static String inserisciIndirizzo() {
         System.out.println(" Inserisci l'indirizzo del tuo punto vendita : ");
         return scanner.nextLine();
     }
 
-    public int inserisciCodiceAttivita() {
+    public static String inserisciCodiceAttivita() {
         System.out.println(" Inserisci il codice del punto vendita dove l'utente lavora : ");
-        return scanner.nextInt();
+        return scanner.nextLine();
+    }
+
+    private static int provaScannerInt() {
+        while (true) {
+            try {
+                int intero = scanner.nextInt();
+                scanner.nextLine();
+                return intero;
+            } catch (Exception e) {
+                System.out.println("Cio' che hai inserito non e' un valore numerico, ritenta ");
+            }
+        }
     }
 }
+
+
 

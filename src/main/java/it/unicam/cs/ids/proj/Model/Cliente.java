@@ -6,20 +6,20 @@ package it.unicam.cs.ids.proj.Model;
 public class Cliente extends UtenteAutenticato {
 
     int punti;
-    long codiceTessera;
+    String codiceTessera;
 
-    public Cliente(String nome, String cognome, String dataNascita,
-                   String residenza, Integer telefono, String email,String nomeUtente, String password) {
-        super(nome, cognome, dataNascita, residenza, telefono , email,nomeUtente, password);
-        
+    public Cliente(String nome, String cognome,
+                   String residenza, String email,String nomeUtente, String password) {
+        super(nome, cognome, residenza, email,nomeUtente, password);
+
     }
     void guadagnaPunti(int punti){
         this.punti += punti;
     }
 
-    public long getCodiceTessera(){return codiceTessera;}
+    public String getCodiceTessera(){return codiceTessera;}
 
-    public void setCodiceTessera(int codiceTessera) {
+    public void setCodiceTessera(String codiceTessera) {
         this.codiceTessera = codiceTessera;
     }
 
