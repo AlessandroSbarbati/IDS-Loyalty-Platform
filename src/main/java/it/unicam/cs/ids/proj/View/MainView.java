@@ -27,7 +27,7 @@ public class MainView {
                 break;
             case 4:
                 ControllerProprietario.cancellaProgrammaFedelta();
-
+                
         }
     }
 

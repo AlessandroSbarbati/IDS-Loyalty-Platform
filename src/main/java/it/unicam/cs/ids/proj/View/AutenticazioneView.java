@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  *
+ *
  */
 public class AutenticazioneView {
 
@@ -20,7 +21,8 @@ public class AutenticazioneView {
 
         switch (provaScannerInt()) {
             case 1:
-                sceltaProfilo(); break;
+                sceltaProfilo();
+                break;
             case 2:
                 login();
         }

@@ -9,10 +9,17 @@ public class Cliente extends UtenteAutenticato {
     String codiceTessera;
 
     public Cliente(String nome, String cognome,
-                   String residenza, String email,String nomeUtente, String password) {
+                   String residenza, String email,String nomeUtente, String password,
+                   int punti, String codiceTessera) {
         super(nome, cognome, residenza, email,nomeUtente, password);
-
+        this.punti=punti;
+        this.codiceTessera=codiceTessera;
     }
+
+    public Cliente(String nome, String cognome, String residenza, String email, String nomeUtente, String pwd) {
+        super(nome, cognome, residenza,email,nomeUtente,pwd);
+    }
+
     void guadagnaPunti(int punti){
         this.punti += punti;
     }

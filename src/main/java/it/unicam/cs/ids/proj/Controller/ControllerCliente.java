@@ -22,7 +22,7 @@ public class ControllerCliente {
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
                 + AutenticazioneView.inserisciPassword() + "'";
         ResultSet rs = DBpiattaforma.executeQuery(query);
-        while(rs.next())
+        while(rs.next());
             clienti = new Cliente(
                     (rs.getString("nome")),
                     (rs.getString("cognome")),
