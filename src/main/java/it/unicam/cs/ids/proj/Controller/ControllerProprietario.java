@@ -12,12 +12,6 @@ public class ControllerProprietario {
 
     static Proprietario proprietario;
 
-    public static void cancellaProgrammaFedelta() throws SQLException {
-        String nomePF = AutenticazioneView.inserisciNome();
-        String query = "delete from ProgrammiFedelta where nome = '" + nomePF + "'";
-        DBpiattaforma.insertQuery(query);
-    }
-
     public static void loginProprietario() throws SQLException {
 
         String query = "SELECT * from proprietari where nomeUtente = '"
@@ -36,6 +30,13 @@ public class ControllerProprietario {
         System.out.println(proprietario.getNome() + proprietario.getCognome());
         MainView.azioniProprietario();
     }
+
+    public static void cancellaProgrammaFedelta() throws SQLException {
+        String nomePF = AutenticazioneView.inserisciNome();
+        String query = "delete from ProgrammiFedelta where nome = '" + nomePF + "'";
+        DBpiattaforma.insertQuery(query);
+    }
+
 
     public static void nuovoProgrammaPunti() {
     }

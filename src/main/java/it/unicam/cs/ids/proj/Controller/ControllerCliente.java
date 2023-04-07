@@ -40,10 +40,10 @@ public class ControllerCliente {
         DBpiattaforma.insertQuery(query);
     }
 
-    public getTessera() {
+    public void getTessera() {
         String query = "SELECT * from clienti where nomeUtente = '"
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
-                + AutenticazioneView.inserisciPassword() + "'"
+                + AutenticazioneView.inserisciPassword() + "'";
     }
 
 }
