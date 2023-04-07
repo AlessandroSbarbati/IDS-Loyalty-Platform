@@ -32,13 +32,13 @@ public class ControllerRegistrazione {
                 + "','" + AutenticazioneView.inserisciEmail()
                 + "','" + AutenticazioneView.inserisciNomeUtente()
                 + "','" + AutenticazioneView.inserisciPassword() + "')";
-
         DBpiattaforma.insertQuery(query);
     }
 
     public static void nuovoStaff() throws SQLException {
         String query = "INSERT into Staff ( nome, cognome, residenza," +
-                " email, nomeUtente, pwd, codiceAttivita) VALUES('" + AutenticazioneView.inserisciNome()
+                " email, nomeUtente, pwd, codiceAttivita) VALUES('"
+                + AutenticazioneView.inserisciNome()
                 + "','" + AutenticazioneView.inserisciCognome()
                 + "','" + AutenticazioneView.inserisciResidenza()
                 + "','" + AutenticazioneView.inserisciEmail()
@@ -60,7 +60,8 @@ public class ControllerRegistrazione {
 
     public static void nuovoProgrammaFedelta() throws SQLException {
 
-        String query = "INSERT into ProgrammiFedelta(nome, codiceAttivita) VALUES('"
+        String query = "INSERT into ProgrammiFedelta(nome, codiceAttivita) " +
+                "VALUES('"
                 +         AutenticazioneView.inserisciNome()
                 + "','" + AutenticazioneView.inserisciCodiceAttivita() + "')";
         DBpiattaforma.insertQuery(query);

@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.proj.View;
 
+import it.unicam.cs.ids.proj.Controller.ControllerCliente;
 import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
 import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
 import java.sql.SQLException;
@@ -46,5 +47,29 @@ public class MainView {
 
 
         }
+    }
+
+    public static void azioniClienti() throws SQLException {
+        System.out.println("Premere 1 per creare una tessera  \n");
+        System.out.println("Premere 2 per aggiungere un programma fedeltà cashback \n");
+        System.out.println("Premere 3 per aggiungere un programma fedeltà VIP \n");
+        System.out.println("Premere 4 per aggiungere un programma fedeltà a livelli \n");
+        int sceltaUtente = scanner.nextInt();
+        switch (sceltaUtente) {
+            case 1:
+                ControllerCliente.aderisciProgramma();
+            case 2:
+                ControllerProprietario.nuovoProgrammaCashback();
+            case 3:
+                System.out.println("Creazione programma VIP"); //NON IMPLEMENTATO!
+            case 4:
+                ControllerProprietario.nuovoProgrammaLivelli();
+
+        }
+    }
+
+    public static String inserisciNomeProgramma() {
+        System.out.println(" Inserisci il nome del programma fedeltà : ");
+        return scanner.nextLine();
     }
 }

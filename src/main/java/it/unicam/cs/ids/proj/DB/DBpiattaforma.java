@@ -31,56 +31,7 @@ public class DBpiattaforma {
 
     }
 
-          /*      pstmt.setString(1, "dog");
-                pstmt.execute();
-                pstmt.setString(1, "cat");
-                pstmt.execute();
-                try (ResultSet rs = stmt.executeQuery(SELECT);) {
-                    while (rs.next()) {
-                        System.out.println("--------------------------------------");
-                        System.out.println("id= " + rs.getString("id"));
-                        System.out.println("nome= " + rs.getString("name"));
-                        System.out.println("--------------------------------------");
-                    }
-                }
-
-
-    public void addCliente(Cliente cliente) {
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             Statement stmt = conn.createStatement();
-             PreparedStatement pstmt = conn.prepareStatement(INSERT);) {
-            Class.forName(DRIVER);
-            pstmt.setObject(1, cliente);
-            pstmt.execute();
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(it.unicam.cs.ids.proj.Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void addStaff(Staff staff) {
-        try(  Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-              Statement stmt = conn.createStatement();
-              PreparedStatement pstmt = conn.prepareStatement(INSERT);) {
-            Class.forName(DRIVER);
-            pstmt.setObject(1, staff);
-            pstmt.execute();}
-        catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(it.unicam.cs.ids.proj.Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
+          /*
      static ArrayList<PuntoVendita> listaPuntiVendita;
     static ArrayList<Cliente> listaClienti;
     static ArrayList<Proprietario> listaProprietari;
