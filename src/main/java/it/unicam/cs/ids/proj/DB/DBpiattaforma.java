@@ -25,6 +25,10 @@ public class DBpiattaforma {
 
     }
 
+
+
+
+
     public static ResultSet executeQuery(String query) throws SQLException {
         Statement statement = conn.createStatement();
         return statement.executeQuery(query);

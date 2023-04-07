@@ -19,13 +19,16 @@ public class MainView {
         switch (sceltaUtente) {
             case 1:
                 ControllerRegistrazione.nuovoPuntoVendita();
+                break;
             case 2:
                 ControllerRegistrazione.nuovoStaff();
+                break;
             case 3:
                 ControllerRegistrazione.nuovoProgrammaFedelta();
+                break;
             case 4:
                 ControllerProprietario.cancellaProgrammaFedelta();
-
+                
         }
     }
 
@@ -38,10 +41,13 @@ public class MainView {
         switch (sceltaUtente) {
             case 1:
                 ControllerProprietario.nuovoProgrammaPunti();
+                break;
             case 2:
                 ControllerProprietario.nuovoProgrammaCashback();
+                break;
             case 3:
                 System.out.println("Creazione programma VIP"); //NON IMPLEMENTATO!
+                break;
             case 4:
                 ControllerProprietario.nuovoProgrammaLivelli();
 
