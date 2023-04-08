@@ -3,26 +3,21 @@ package it.unicam.cs.ids.proj.Model;
 public class ProgrammaFedelta {
 
     String nome;
-    String codiceAttivita;
-    double spesa;
+    int codiceAttivita;
 
-    public ProgrammaFedelta(String nome, String codiceAttivita, Double spesa) {
+    public ProgrammaFedelta(String nome, int codiceAttivita) {
         this.nome = nome;
         this.codiceAttivita = codiceAttivita;
-        this.spesa = spesa;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getCodiceAttivita() {
+    public int getCodiceAttivita() {
         return codiceAttivita;
     }
 
-    public double getSpesa() {
-        return spesa;
-    }
 }
 
 

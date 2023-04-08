@@ -2,11 +2,16 @@ package it.unicam.cs.ids.proj.Controller;
 
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
 import it.unicam.cs.ids.proj.View.*;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
 public class ControllerRegistrazione {
 
+
+    public ControllerRegistrazione() throws SQLException {
+    }
 
     public static void nuovoProprietario() throws SQLException {
 
@@ -36,7 +41,17 @@ public class ControllerRegistrazione {
     }
 
     public static void nuovoStaff() throws SQLException {
-        String query = "INSERT into Staff ( nome, cognome, residenza," +
+        int codiceAttivita = 0;
+
+        String query = " SELECT * from puntiVendita where id = "
+                + AutenticazioneView.inserisciCodiceAttivita() ;
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+        if(!rs.isBeforeFirst()) {
+            System.out.println("Non esiste nessuna attività con questo codice");}
+        while(rs.next())
+        codiceAttivita = rs.getInt("id");
+
+        String query1 = "INSERT into Staff ( nome, cognome, residenza," +
                 " email, nomeUtente, pwd, codiceAttivita) VALUES('"
                 + AutenticazioneView.inserisciNome()
                 + "','" + AutenticazioneView.inserisciCognome()
@@ -44,9 +59,9 @@ public class ControllerRegistrazione {
                 + "','" + AutenticazioneView.inserisciEmail()
                 + "','" + AutenticazioneView.inserisciNomeUtente()
                 + "','" + AutenticazioneView.inserisciPassword()
-                + "','" + AutenticazioneView.inserisciCodiceAttivita() + "')";
+                + "','" + codiceAttivita + "')";
 
-        DBpiattaforma.insertQuery(query);
+        DBpiattaforma.insertQuery(query1);
     }
     public static void nuovoPuntoVendita() throws SQLException {
 
@@ -60,11 +75,24 @@ public class ControllerRegistrazione {
 
     public static void nuovoProgrammaFedelta() throws SQLException {
 
-        String query = "INSERT into ProgrammiFedelta(nome, codiceAttivita) " +
+        int codiceAttivita = 0;
+
+        String query = " SELECT * from puntiVendita where id = "
+                + AutenticazioneView.inserisciCodiceAttivita() ;
+
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+
+        if(!rs.isBeforeFirst()) {
+            System.out.println("Non esiste nessuna attività con questo codice");}
+
+        while(rs.next())
+            codiceAttivita = rs.getInt("id");
+
+        String query1 = "INSERT into ProgrammiFedelta(nome, codiceAttivita) " +
                 "VALUES('"
-                +         AutenticazioneView.inserisciNome()
-                + "','" + AutenticazioneView.inserisciCodiceAttivita() + "')";
-        DBpiattaforma.insertQuery(query);
+                +         MainView.inserisciNomeProgramma()
+                + "','" + codiceAttivita + "')";
+        DBpiattaforma.insertQuery(query1);
         MainView.selezioneProgrammaFedelta();
     }
 }

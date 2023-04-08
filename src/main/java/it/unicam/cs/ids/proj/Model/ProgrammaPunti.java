@@ -2,13 +2,13 @@ package it.unicam.cs.ids.proj.Model;
 
 public class ProgrammaPunti extends ProgrammaFedelta{
 
-    int punti;
+    int valorePunti;
     int numeroPremi;
     int valorePremio;
 
-    public ProgrammaPunti(String nome, String codiceAttivita, double spesa, int punti, int numeroPremi, int valorePremio){
-        super(nome, codiceAttivita,spesa);
-        this.punti = punti;
+    public ProgrammaPunti(String nome, int codiceAttivita, int valorePunti, int numeroPremi, int valorePremio){
+        super(nome, codiceAttivita);
+        this.valorePunti = valorePunti;
         this.numeroPremi = numeroPremi;
         this.valorePremio = valorePremio;
     }

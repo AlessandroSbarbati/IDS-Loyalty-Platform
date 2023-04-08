@@ -6,9 +6,9 @@ public class ProgrammaLivelli extends ProgrammaFedelta{
     int sogliaLivello;
     int scontoLivello;
 
-    public ProgrammaLivelli(String nome, String codiceAttivita, double spesa, int numeroLivelli,
+    public ProgrammaLivelli(String nome, int codiceAttivita, int numeroLivelli,
                             int sogliaLivello, int scontoLivello){
-        super(nome, codiceAttivita,spesa);
+        super(nome, codiceAttivita);
         this.numeroLivelli = numeroLivelli;
         this.sogliaLivello = sogliaLivello;
         this.scontoLivello = scontoLivello;

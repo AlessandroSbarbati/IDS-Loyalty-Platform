@@ -19,6 +19,8 @@ public class ControllerCliente {
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
                 + AutenticazioneView.inserisciPassword() + "'";
         ResultSet rs = DBpiattaforma.executeQuery(query);
+        if(!rs.isBeforeFirst()) {
+            AutenticazioneView.erroreLogin();}
         while(rs.next())
             cliente = new Cliente(
                     (rs.getInt("id")),
@@ -33,17 +35,23 @@ public class ControllerCliente {
     }
 
     public static void aderisciProgramma() throws SQLException {
-        String query = "INSERT into tessere(punti, livello, depositoCashback,"
+        String query = "INSERT into programmiFedeltaClienti(punti, livello, depositoCashback,"
                 +      " codiceTessera, nomeProgramma) "
                 + "VALUES(" + 0 + "," + 0 + "," + 0 + "," + cliente.getCodiceTessera()
                 +  ",'" +  MainView.inserisciNomeProgramma() + "')";
         DBpiattaforma.insertQuery(query);
     }
 
-    public getTessera() {
-        String query = "SELECT * from clienti where nomeUtente = '"
-                + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
-                + AutenticazioneView.inserisciPassword() + "'"
+    public void visualizzaProgrammaFedelta() throws SQLException {
+        String query = "SELECT * from programmiFedeltaClienti where codiceTessera = '"
+                + cliente.getCodiceTessera() + "' and nome = '"
+                + MainView.inserisciNomeProgramma() + "'";
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+        while (rs.next())
+        System.out.println("I tuoi punti in questo programma fedeltà sono :" +rs.getInt("punti"));
+        System.out.println("Il tuo livello in questo programma fedeltà è :" +rs.getInt("livello"));
+        System.out.println("Il cashback disponibile in questo programma fedeltà :" + rs.getDouble("depositoCashback"));
+
     }
 
 }

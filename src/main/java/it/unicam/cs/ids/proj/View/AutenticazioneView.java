@@ -3,6 +3,7 @@ package it.unicam.cs.ids.proj.View;
 import it.unicam.cs.ids.proj.Controller.ControllerCliente;
 import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
 import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
+import it.unicam.cs.ids.proj.Controller.ControllerStaff;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -28,9 +29,10 @@ public class AutenticazioneView {
         }
     }
 
-    private void login() throws SQLException {
+    private static void login() throws SQLException {
         System.out.println("Premere 1 per eseguire il login cliente \n");
         System.out.println("Premere 2 per eseguire il login proprietario \n");
+        System.out.println("Premere 3 per eseguire il login proprietario \n");
 
         switch (provaScannerInt()) {
             case 1:
@@ -38,7 +40,9 @@ public class AutenticazioneView {
                 break;
             case 2:
                 ControllerProprietario.loginProprietario();
-
+                break;
+            case 3:
+                ControllerStaff.loginStaff();
         }
     }
 
@@ -95,11 +99,16 @@ public class AutenticazioneView {
     }
 
     public static String inserisciCodiceAttivita() {
-        System.out.println(" Inserisci il codice del punto vendita dove l'utente lavora : ");
+        System.out.println(" Inserisci il codice del punto vendita : ");
         return scanner.nextLine();
     }
 
-    private static int provaScannerInt() {
+    public static void erroreLogin() throws SQLException {
+        System.out.println("Hai inserito le credenziali sbagliate");
+        login();
+    }
+
+    protected static int provaScannerInt() {
         while (true) {
             try {
                 int intero = scanner.nextInt();
