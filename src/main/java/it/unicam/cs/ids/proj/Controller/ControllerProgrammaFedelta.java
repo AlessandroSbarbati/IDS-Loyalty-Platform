@@ -34,7 +34,29 @@ public class ControllerProgrammaFedelta {
     public static void nuovoProgrammaCashback() {
     }
 
-    public static void nuovoProgrammaLivelli() {
+    public static void nuovoProgrammaLivelli() throws SQLException{
+        String nome = "";
+
+        String query = " SELECT * from programmiFedelta where nome = '"
+                + MainView.inserisciNomeProgramma() + "'" ;
+
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+
+        if(!rs.isBeforeFirst()) {
+            System.out.println("Non esiste nessuna programma fedeltà con questo nome");}
+
+        while(rs.next())
+            nome = rs.getString("nome");
+
+        String query1 = "UPDATE programmiFedelta SET "
+                + "  valoreSoglia1 = " + MainView.inserisciSogliaLivello()
+                + "  valoreSoglia2 = " + MainView.inserisciSogliaLivello()
+                + "  valoreSoglia3 = " + MainView.inserisciSogliaLivello()
+                + ", scontoLivello1 = " + MainView.inserisciScontoLivello()
+                + ", scontoLivello2 = " + MainView.inserisciScontoLivello()
+                + ", scontoLivello3 = " + MainView.inserisciScontoLivello()
+                + " WHERE nome = '" + nome + "'";
+        DBpiattaforma.insertQuery(query1);
     }
 }
 
