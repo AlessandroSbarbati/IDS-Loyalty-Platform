@@ -103,7 +103,10 @@ public class MainView {
         return AutenticazioneView.provaScannerInt();
     }
 
-
+    public static int inserisciValoreCashback(){
+        System.out.println("Inserisci il valore del cashback");
+        return AutenticazioneView.provaScannerInt();
+    }
 
 
 
