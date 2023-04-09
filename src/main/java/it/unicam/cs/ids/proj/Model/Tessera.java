@@ -1,11 +1,11 @@
 package it.unicam.cs.ids.proj.Model;
 
 public class Tessera {
-    int punti;
-    int livello;
-    double depositoCashback;
-    int codiceTessera;
-    String nomeProgrammaFedelta;
+    private int punti;
+    private int livello;
+    private double depositoCashback;
+    /*int codiceTessera;
+    String nomeProgrammaFedelta;*/
 
     public Tessera() {
         punti = 0;

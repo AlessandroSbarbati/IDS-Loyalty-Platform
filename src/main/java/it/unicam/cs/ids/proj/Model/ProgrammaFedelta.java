@@ -2,16 +2,16 @@ package it.unicam.cs.ids.proj.Model;
 
 public class ProgrammaFedelta {
 
-    String nome;
-    int codiceAttivita;
+   private String nomeProgrammaFedelta;
+   private int codiceAttivita;
 
-    public ProgrammaFedelta(String nome, int codiceAttivita) {
-        this.nome = nome;
+    public ProgrammaFedelta(String nomeProgrammaFedelta, int codiceAttivita) {
+        this.nomeProgrammaFedelta = nomeProgrammaFedelta;
         this.codiceAttivita = codiceAttivita;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeProgrammaFedelta() {
+        return nomeProgrammaFedelta;
     }
 
     public int getCodiceAttivita() {

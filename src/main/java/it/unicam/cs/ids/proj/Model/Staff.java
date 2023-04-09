@@ -14,4 +14,7 @@ public class Staff extends UtenteAutenticato {
         this.codiceAttivita = codiceAttivita;
     }
 
+    public int getCodiceAttivita() {
+        return codiceAttivita;
+    }
 }
