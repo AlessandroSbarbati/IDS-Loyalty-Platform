@@ -41,6 +41,9 @@ public class ControllerProprietario {
         MainView.azioniProprietario();
     }
 
+    public static void modificaProgrammaFedelta() throws SQLException{
+        MainView.selezioneModificaProgrammaFedelta();
+    }
 }
 
 

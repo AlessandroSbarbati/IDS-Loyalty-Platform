@@ -14,6 +14,7 @@ public class MainView {
         System.out.println("Premere 2 per aggiungere un utente staff \n");
         System.out.println("Premere 3 per aggiungere un programma fedeltà \n");
         System.out.println("Premere 4 per cancellare un programma fedeltà \n");
+        System.out.println("Premere 5 per modificare un programma fedeltà \n");
         switch (AutenticazioneView.provaScannerInt()) {
             case 1:
                 ControllerRegistrazione.nuovoPuntoVendita();
@@ -26,6 +27,9 @@ public class MainView {
                 break;
             case 4:
                 ControllerProprietario.cancellaProgrammaFedelta();
+                break;
+            case 5:
+                ControllerProprietario.modificaProgrammaFedelta();
 
         }
     }
@@ -84,6 +88,25 @@ public class MainView {
         }
     }
 
+    public static void selezioneModificaProgrammaFedelta() throws SQLException{
+        System.out.println("Premere 1 per modificare un programma fedeltà a punti  \n");
+        System.out.println("Premere 2 per modificare un programma fedeltà cashback \n");
+        System.out.println("Premere 3 per modificare un programma fedeltà VIP \n");
+        System.out.println("Premere 4 per modificare un programma fedeltà a livelli \n");
+        switch (AutenticazioneView.provaScannerInt()) {
+            case 1:
+                ControllerProgrammaFedelta.nuovoProgrammaPunti();
+                break;
+            case 2:
+                ControllerProgrammaFedelta.nuovoProgrammaCashback();
+                break;
+            case 3:
+                System.out.println("Creazione programma VIP"); //NON IMPLEMENTATO!
+                break;
+            case 4:
+                ControllerProgrammaFedelta.nuovoProgrammaLivelli();
+        }
+    }
 
     public static String inserisciNomeProgramma() {
         System.out.println(" Inserisci il nome del programma fedeltà : ");
