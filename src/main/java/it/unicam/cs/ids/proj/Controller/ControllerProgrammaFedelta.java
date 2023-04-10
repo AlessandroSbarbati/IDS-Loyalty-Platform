@@ -51,6 +51,10 @@ public class ControllerProgrammaFedelta {
         DBpiattaforma.insertQuery(query1);
     }
 
+    public static void nuovoProgrammaVIP() {
+        System.out.println("Programma VIP non disponibile"); //NON IMPLEMENTATO!
+    }
+
     public static void nuovoProgrammaLivelli() throws SQLException{
         String nome = "";
 
@@ -76,8 +80,5 @@ public class ControllerProgrammaFedelta {
         DBpiattaforma.insertQuery(query1);
     }
 
-    public static void nuovoProgrammaVIP() {
-        System.out.println("Programma VIP non disponibile"); //NON IMPLEMENTATO!
-    }
 }
 
