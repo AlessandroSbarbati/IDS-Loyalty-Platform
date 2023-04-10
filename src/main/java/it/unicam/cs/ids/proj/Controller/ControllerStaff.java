@@ -33,19 +33,64 @@ public class ControllerStaff {
                     (rs.getString("nomeUtente")),
                     (rs.getString("pwd")),
                     (rs.getInt("id")));
-        MainView.azioniProprietario();
+        MainView.azioniStaff();
     }
 
-    public static void inserisciPunti() {
+    public static void inserisciPunti(int codiceTessera, int spesa) throws SQLException {
+        int puntiGuadagnati = 0;
+        String query = " SELECT * from programmiFedelta where nome = '"
+                + MainView.inserisciNomeProgramma() + "'" ;
+
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+
+        if(!rs.isBeforeFirst()) {
+            System.out.println("Non esiste nessuna programma fedeltà con questo nome");}
+
+        while(rs.next())
+            puntiGuadagnati = rs.getInt("valorePunti") * spesa;
+
+            String query1 = "UPDATE programmiFedeltaClienti SET "
+                    + " punti = punti + " + puntiGuadagnati +
+                    " where codiceTessera = " + codiceTessera ;
+
+            DBpiattaforma.insertQuery(query1);
     }
 
-    public static void rimuoviPunti() {
+    public static void rimuoviPunti(int codiceTessera, int puntiRimossi) throws SQLException {
+
+        String query1 = "UPDATE programmiFedeltaClienti SET "
+                + " punti = punti - " + puntiRimossi +
+                " where codiceTessera = " + codiceTessera ;
+
+        DBpiattaforma.insertQuery(query1);
     }
 
-    public static void accreditoCashback() {
+    public static void accreditoCashback(int codiceTessera, int spesa) throws SQLException {
+        int cashbackGuadagnato = 0;
+        String query = " SELECT * from programmiFedelta where nome = '"
+                + MainView.inserisciNomeProgramma() + "'" ;
+
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+
+        if(!rs.isBeforeFirst()) {
+            System.out.println("Non esiste nessuna programma fedeltà con questo nome");}
+
+        while(rs.next())
+            cashbackGuadagnato = spesa/rs.getInt("valoreCashback");
+
+        String query1 = "UPDATE programmiFedeltaClienti SET "
+                + " depositoCashback = depositoCashback + " + cashbackGuadagnato +
+                " where codiceTessera = " + codiceTessera ;
+
+        DBpiattaforma.insertQuery(query1);
     }
 
-    public static void rimozioneSaldoCashback() {
+    public static void rimozioneSaldoCashback(int codiceTessera, int cashbackRimosso) throws SQLException {
+        String query1 = "UPDATE programmiFedeltaClienti SET "
+                + " punti = punti - " + cashbackRimosso +
+                " where codiceTessera = " + codiceTessera ;
+
+        DBpiattaforma.insertQuery(query1);
     }
 
     public static void aumentaLivello() {

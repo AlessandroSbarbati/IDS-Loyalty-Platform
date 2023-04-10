@@ -54,7 +54,6 @@ public class MainView {
 
     public static void azioniClienti() throws SQLException {
         System.out.println("Premere 1 per aderire ad un programma fedeltà  \n");
-        scanner.nextLine();
         switch (AutenticazioneView.provaScannerInt()) {
             case 1:
                 ControllerCliente.aderisciProgramma();
@@ -67,19 +66,18 @@ public class MainView {
         System.out.println("Premere 3 per accreditare del cashback ad un programma fedeltà  \n");
         System.out.println("Premere 4 per rimuovere del cashback ad un programma fedeltà  \n");
         System.out.println("Premere 5 per aumentare il livello di un programma fedeltà  \n");
-        scanner.nextLine();
         switch (AutenticazioneView.provaScannerInt()){
             case 1:
-                ControllerStaff.inserisciPunti();
+                ControllerStaff.inserisciPunti(inserisciCodiceCliente(),inserisciSpesaEffettuata());
             break;
             case 2:
-                ControllerStaff.rimuoviPunti();
+                ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
             break;
             case 3:
-                ControllerStaff.accreditoCashback();
+                ControllerStaff.accreditoCashback(inserisciCodiceCliente(),inserisciSpesaEffettuata());
                 break;
             case 4:
-                ControllerStaff.rimozioneSaldoCashback();
+                ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(),inserisciCashbackDaRimuovere());
                 break;
             case 5:
                 ControllerStaff.aumentaLivello();
@@ -118,10 +116,28 @@ public class MainView {
     }
 
     public static int inserisciValoreCashback(){
-        System.out.println("Inserisci il valore del cashback");
+        System.out.println("Inserisci la spesa da da effettuare per aggiungere 1 euro al tuo cashback");
         return AutenticazioneView.provaScannerInt();
     }
 
+    public static int inserisciCodiceCliente() {
+        System.out.println("Inserisci il codice del cliente : ");
+        return AutenticazioneView.provaScannerInt();
+    }
 
+    public static int inserisciSpesaEffettuata() {
+        System.out.println("Inserisci la spesa effettuata dal cliente :");
+        return AutenticazioneView.provaScannerInt();
+    }
+
+    private static int inserisciPuntiDaRimuovere() {
+        System.out.println("Inserisci il numero di punti da rimuovere :");
+        return AutenticazioneView.provaScannerInt();
+    }
+
+    private static int inserisciCashbackDaRimuovere() {
+        System.out.println("Inserisci il numero di euro nel cashback da rimuovere :");
+        return AutenticazioneView.provaScannerInt();
+    }
 
 }

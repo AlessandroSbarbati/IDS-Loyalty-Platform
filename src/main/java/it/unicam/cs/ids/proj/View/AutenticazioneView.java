@@ -32,7 +32,7 @@ public class AutenticazioneView {
     private static void login() throws SQLException {
         System.out.println("Premere 1 per eseguire il login cliente \n");
         System.out.println("Premere 2 per eseguire il login proprietario \n");
-        System.out.println("Premere 3 per eseguire il login proprietario \n");
+        System.out.println("Premere 3 per eseguire il login staff \n");
 
         switch (provaScannerInt()) {
             case 1:
