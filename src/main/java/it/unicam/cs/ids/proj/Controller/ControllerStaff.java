@@ -35,6 +35,9 @@ public class ControllerStaff {
                     (rs.getInt("id")));
         MainView.azioniStaff();
     }
+    public static void logoutStaff(){
+        staff=null;
+    }
 
     public static void inserisciPunti(int codiceTessera, int spesa) throws SQLException {
         int puntiGuadagnati = 0;

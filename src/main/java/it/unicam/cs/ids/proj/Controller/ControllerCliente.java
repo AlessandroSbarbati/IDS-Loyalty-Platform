@@ -33,6 +33,9 @@ public class ControllerCliente {
         System.out.println(cliente.getNome() + cliente.getCognome());
         MainView.azioniClienti();
     }
+    public static void logoutCliente(){
+        cliente=null;
+    }
 
     public static void aderisciProgramma() throws SQLException {
         String query = "INSERT into programmiFedeltaClienti(punti, livello, depositoCashback,"

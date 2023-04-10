@@ -16,37 +16,41 @@ public class AutenticazioneView {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public void accesso() throws SQLException {
-        System.out.println("Premere 1 per effettuare la registrazione \n");
-        System.out.println("Premere 2 per effettuare il login \n");
+    public static void accesso() throws SQLException {
+        boolean flag = false;
+        do {
+            System.out.println("Premere 1 per effettuare la registrazione \n");
+            System.out.println("Premere 2 per effettuare il login \n");
+            System.out.println("Premere 3 per uscire \n");
 
-        switch (provaScannerInt()) {
-            case 1:
-                sceltaProfilo();
-                break;
-            case 2:
-                login();
-        }
+
+            switch (provaScannerInt()) {
+                case 1 -> sceltaProfilo();
+                case 2 -> login();
+                case 3 -> flag=true;
+            }
+        }while(!flag);
+        System.out.println("buon proseguimento");
     }
 
     private static void login() throws SQLException {
-        System.out.println("Premere 1 per eseguire il login cliente \n");
-        System.out.println("Premere 2 per eseguire il login proprietario \n");
-        System.out.println("Premere 3 per eseguire il login staff \n");
 
-        switch (provaScannerInt()) {
-            case 1:
-                ControllerCliente.loginCliente();
-                break;
-            case 2:
-                ControllerProprietario.loginProprietario();
-                break;
-            case 3:
-                ControllerStaff.loginStaff();
-        }
+            System.out.println("Premere 1 per eseguire il login cliente \n");
+            System.out.println("Premere 2 per eseguire il login proprietario \n");
+            System.out.println("Premere 3 per eseguire il login staff \n");
+            System.out.println("Premere 4 per tornare indietro \n");
+
+
+            switch (provaScannerInt()) {
+                case 1 -> ControllerCliente.loginCliente();
+                case 2 -> ControllerProprietario.loginProprietario();
+                case 3 -> ControllerStaff.loginStaff();
+                case 4 -> AutenticazioneView.accesso();
+            }
+
     }
 
-    private void sceltaProfilo() throws SQLException {
+    private static void sceltaProfilo() throws SQLException {
         System.out.println("Premere 1 per registrarti come cliente \n");
         System.out.println("Premere 2 per registrarti come proprietario \n");
 

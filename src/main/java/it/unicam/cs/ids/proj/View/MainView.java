@@ -10,28 +10,26 @@ public class MainView {
     static Scanner scanner = new Scanner(System.in);
 
     public static void azioniProprietario() throws SQLException {
-        System.out.println("Premere 1 per aggiungere una attivita' \n");
-        System.out.println("Premere 2 per aggiungere un utente staff \n");
-        System.out.println("Premere 3 per aggiungere un programma fedeltà \n");
-        System.out.println("Premere 4 per cancellare un programma fedeltà \n");
-        System.out.println("Premere 5 per modificare un programma fedeltà \n");
-        switch (AutenticazioneView.provaScannerInt()) {
-            case 1:
-                ControllerRegistrazione.nuovoPuntoVendita();
-                break;
-            case 2:
-                ControllerRegistrazione.nuovoStaff();
-                break;
-            case 3:
-                ControllerRegistrazione.nuovoProgrammaFedelta();
-                break;
-            case 4:
-                ControllerProprietario.cancellaProgrammaFedelta();
-                break;
-            case 5:
-                ControllerProprietario.modificaProgrammaFedelta();
+        boolean flag = false;
+        do {
+            System.out.println("Premere 1 per aggiungere una attivita' \n");
+            System.out.println("Premere 2 per aggiungere un utente staff \n");
+            System.out.println("Premere 3 per aggiungere un programma fedeltà \n");
+            System.out.println("Premere 4 per cancellare un programma fedeltà \n");
+            System.out.println("Premere 5 per modificare un programma fedeltà \n");
+            System.out.println("Premere 6 per logout \n");
 
-        }
+            switch (AutenticazioneView.provaScannerInt()) {
+                case 1 -> ControllerRegistrazione.nuovoPuntoVendita();
+                case 2 -> ControllerRegistrazione.nuovoStaff();
+                case 3 -> ControllerRegistrazione.nuovoProgrammaFedelta();
+                case 4 -> ControllerProprietario.cancellaProgrammaFedelta();
+                case 5 -> ControllerProprietario.modificaProgrammaFedelta();
+                case 6 -> {ControllerProprietario.logoutProprietario();
+                        flag = true;}
+
+            }
+        }while(!flag);
     }
 
     public static void selezioneProgrammaFedelta() throws SQLException {
@@ -57,38 +55,49 @@ public class MainView {
     }
 
     public static void azioniClienti() throws SQLException {
-        System.out.println("Premere 1 per aderire ad un programma fedeltà  \n");
-        switch (AutenticazioneView.provaScannerInt()) {
-            case 1:
-                ControllerCliente.aderisciProgramma();
-                break;
-            case 2:
-                ControllerCliente.visualizzaProgrammaFedelta();
-        }
+        boolean flag =false;
+        do {
+            System.out.println("Premere 1 per aderire ad un programma fedeltà  \n");
+            System.out.println("Premere 2 per visualizzare un programma fedeltà  \n");
+            System.out.println("Premere 3 per logout  \n");
+
+
+            switch (AutenticazioneView.provaScannerInt()) {
+                case 1 -> ControllerCliente.aderisciProgramma();
+                case 2 -> ControllerCliente.visualizzaProgrammaFedelta();
+                case 3 -> {ControllerCliente.logoutCliente();
+                    flag = true;
+                }
+
+
+            }
+        }while (!flag);
+
     }
 
+
     public static void azioniStaff() throws SQLException{
-        System.out.println("Premere 1 per inserire i punti ad un programma fedeltà  \n");
-        System.out.println("Premere 2 per rimuovere i punti ad un programma fedeltà  \n");
-        System.out.println("Premere 3 per accreditare del cashback ad un programma fedeltà  \n");
-        System.out.println("Premere 4 per rimuovere del cashback ad un programma fedeltà  \n");
-        System.out.println("Premere 5 per aumentare il livello di un programma fedeltà  \n");
-        switch (AutenticazioneView.provaScannerInt()){
-            case 1:
-                ControllerStaff.inserisciPunti(inserisciCodiceCliente(),inserisciSpesaEffettuata());
-            break;
-            case 2:
-                ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
-            break;
-            case 3:
-                ControllerStaff.accreditoCashback(inserisciCodiceCliente(),inserisciSpesaEffettuata());
-                break;
-            case 4:
-                ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(),inserisciCashbackDaRimuovere());
-                break;
-            case 5:
-                ControllerStaff.aumentaLivello();
-        }
+        boolean flag = false;
+        do {
+            System.out.println("Premere 1 per inserire i punti ad un programma fedeltà  \n");
+            System.out.println("Premere 2 per rimuovere i punti ad un programma fedeltà  \n");
+            System.out.println("Premere 3 per accreditare del cashback ad un programma fedeltà  \n");
+            System.out.println("Premere 4 per rimuovere del cashback ad un programma fedeltà  \n");
+            System.out.println("Premere 5 per aumentare il livello di un programma fedeltà  \n");
+            System.out.println("Premere 6 per logout  \n");
+
+            switch (AutenticazioneView.provaScannerInt()) {
+                case 1 -> ControllerStaff.inserisciPunti(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                case 2 -> ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
+                case 3 -> ControllerStaff.accreditoCashback(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                case 4 -> ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(), inserisciCashbackDaRimuovere());
+                case 5 -> ControllerStaff.aumentaLivello();
+                case 6 ->{ControllerStaff.logoutStaff();
+                    flag=true;}
+
+                }
+
+        }while(!flag);
     }
 
     public static void selezioneModificaProgrammaFedelta() throws SQLException{
