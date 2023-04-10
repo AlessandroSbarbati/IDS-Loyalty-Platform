@@ -20,13 +20,25 @@ public class MainView {
             System.out.println("Premere 6 per logout \n");
 
             switch (AutenticazioneView.provaScannerInt()) {
-                case 1 -> ControllerRegistrazione.nuovoPuntoVendita();
-                case 2 -> ControllerRegistrazione.nuovoStaff();
-                case 3 -> ControllerRegistrazione.nuovoProgrammaFedelta();
-                case 4 -> ControllerProprietario.cancellaProgrammaFedelta();
-                case 5 -> ControllerProprietario.modificaProgrammaFedelta();
-                case 6 -> {ControllerProprietario.logoutProprietario();
-                        flag = true;}
+                case 1:
+                    ControllerRegistrazione.nuovoPuntoVendita();
+                    break;
+                case 2:
+                    ControllerRegistrazione.nuovoStaff();
+                    break;
+                case 3:
+                    ControllerRegistrazione.nuovoProgrammaFedelta();
+                    break;
+                case 4:
+                    ControllerProprietario.cancellaProgrammaFedelta();
+                    break;
+                case 5:
+                    ControllerProprietario.modificaProgrammaFedelta();
+                    break;
+                case 6:{
+                    ControllerProprietario.logoutProprietario();
+                    flag = true;
+                }
 
             }
         }while(!flag);
@@ -63,9 +75,14 @@ public class MainView {
 
 
             switch (AutenticazioneView.provaScannerInt()) {
-                case 1 -> ControllerCliente.aderisciProgramma();
-                case 2 -> ControllerCliente.visualizzaProgrammaFedelta();
-                case 3 -> {ControllerCliente.logoutCliente();
+                case 1:
+                    ControllerCliente.aderisciProgramma();
+                    break;
+                case 2:
+                    ControllerCliente.visualizzaProgrammaFedelta();
+                    break;
+                case 3:{
+                    ControllerCliente.logoutCliente();
                     flag = true;
                 }
 
@@ -87,12 +104,23 @@ public class MainView {
             System.out.println("Premere 6 per logout  \n");
 
             switch (AutenticazioneView.provaScannerInt()) {
-                case 1 -> ControllerStaff.inserisciPunti(inserisciCodiceCliente(), inserisciSpesaEffettuata());
-                case 2 -> ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
-                case 3 -> ControllerStaff.accreditoCashback(inserisciCodiceCliente(), inserisciSpesaEffettuata());
-                case 4 -> ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(), inserisciCashbackDaRimuovere());
-                case 5 -> ControllerStaff.aumentaLivello();
-                case 6 ->{ControllerStaff.logoutStaff();
+                case 1:
+                    ControllerStaff.inserisciPunti(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                    break;
+                case 2:
+                    ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
+                    break;
+                case 3:
+                    ControllerStaff.accreditoCashback(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                    break;
+                case 4:
+                    ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(), inserisciCashbackDaRimuovere());
+                    break;
+                case 5:
+                    ControllerStaff.aumentaLivello();
+                    break;
+                case 6:{
+                    ControllerStaff.logoutStaff();
                     flag=true;}
 
                 }
