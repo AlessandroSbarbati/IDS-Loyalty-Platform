@@ -75,5 +75,9 @@ public class ControllerProgrammaFedelta {
                 + " WHERE nome = '" + nome + "'";
         DBpiattaforma.insertQuery(query1);
     }
+
+    public static void nuovoProgrammaVIP() {
+        System.out.println("Programma VIP non disponibile"); //NON IMPLEMENTATO!
+    }
 }
 

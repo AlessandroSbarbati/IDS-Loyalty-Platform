@@ -47,7 +47,7 @@ public class MainView {
                 ControllerProgrammaFedelta.nuovoProgrammaCashback();
                 break;
             case 3:
-                System.out.println("Creazione programma VIP"); //NON IMPLEMENTATO!
+                ControllerProgrammaFedelta.nuovoProgrammaVIP();
                 break;
             case 4:
                 ControllerProgrammaFedelta.nuovoProgrammaLivelli();
@@ -101,7 +101,7 @@ public class MainView {
                 ControllerProgrammaFedelta.nuovoProgrammaCashback();
                 break;
             case 3:
-                System.out.println("Creazione programma VIP"); //NON IMPLEMENTATO!
+                ControllerProgrammaFedelta.nuovoProgrammaVIP();
                 break;
             case 4:
                 ControllerProgrammaFedelta.nuovoProgrammaLivelli();
