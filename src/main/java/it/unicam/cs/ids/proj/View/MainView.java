@@ -61,6 +61,9 @@ public class MainView {
         switch (AutenticazioneView.provaScannerInt()) {
             case 1:
                 ControllerCliente.aderisciProgramma();
+                break;
+            case 2:
+                ControllerCliente.visualizzaProgrammaFedelta();
         }
     }
 
@@ -113,10 +116,10 @@ public class MainView {
         return scanner.nextLine();
     }
 
-    public static String inserisciCodiceAttivitaProgramma() {
+    /*public static String inserisciCodiceAttivitaProgramma() {
         System.out.println(" Inserisci il codice del punto vendita da assegnare al programma fedeltà: ");
         return scanner.nextLine();
-    }
+    }*/
 
     public static int inserisciValorePunti() {
         System.out.println("Inserisci il numero di punti da assegnare per ogni euro di spesa");

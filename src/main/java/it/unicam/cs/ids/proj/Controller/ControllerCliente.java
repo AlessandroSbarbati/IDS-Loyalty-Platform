@@ -42,7 +42,7 @@ public class ControllerCliente {
         DBpiattaforma.insertQuery(query);
     }
 
-    public void visualizzaProgrammaFedelta() throws SQLException {
+    public static void visualizzaProgrammaFedelta() throws SQLException {
         String query = "SELECT * from programmiFedeltaClienti where codiceTessera = '"
                 + cliente.getCodiceTessera() + "' and nome = '"
                 + MainView.inserisciNomeProgramma() + "'";
