@@ -1,9 +1,7 @@
 package it.unicam.cs.ids.proj.View;
 
-import it.unicam.cs.ids.proj.Controller.ControllerCliente;
-import it.unicam.cs.ids.proj.Controller.ControllerProgrammaFedelta;
-import it.unicam.cs.ids.proj.Controller.ControllerProprietario;
-import it.unicam.cs.ids.proj.Controller.ControllerRegistrazione;
+import it.unicam.cs.ids.proj.Controller.*;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -60,9 +58,34 @@ public class MainView {
         switch (AutenticazioneView.provaScannerInt()) {
             case 1:
                 ControllerCliente.aderisciProgramma();
-
         }
     }
+
+    public static void azioniStaff() throws SQLException{
+        System.out.println("Premere 1 per inserire i punti ad un programma fedeltà  \n");
+        System.out.println("Premere 2 per rimuovere i punti ad un programma fedeltà  \n");
+        System.out.println("Premere 3 per accreditare del cashback ad un programma fedeltà  \n");
+        System.out.println("Premere 4 per rimuovere del cashback ad un programma fedeltà  \n");
+        System.out.println("Premere 5 per aumentare il livello di un programma fedeltà  \n");
+        scanner.nextLine();
+        switch (AutenticazioneView.provaScannerInt()){
+            case 1:
+                ControllerStaff.inserisciPunti();
+            break;
+            case 2:
+                ControllerStaff.rimuoviPunti();
+            break;
+            case 3:
+                ControllerStaff.accreditoCashback();
+                break;
+            case 4:
+                ControllerStaff.rimozioneSaldoCashback();
+                break;
+            case 5:
+                ControllerStaff.aumentaLivello();
+        }
+    }
+
 
     public static String inserisciNomeProgramma() {
         System.out.println(" Inserisci il nome del programma fedeltà : ");

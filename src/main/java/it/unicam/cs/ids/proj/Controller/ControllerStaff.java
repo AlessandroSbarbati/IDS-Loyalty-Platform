@@ -35,4 +35,19 @@ public class ControllerStaff {
                     (rs.getInt("id")));
         MainView.azioniProprietario();
     }
+
+    public static void inserisciPunti() {
+    }
+
+    public static void rimuoviPunti() {
+    }
+
+    public static void accreditoCashback() {
+    }
+
+    public static void rimozioneSaldoCashback() {
+    }
+
+    public static void aumentaLivello() {
+    }
 }
