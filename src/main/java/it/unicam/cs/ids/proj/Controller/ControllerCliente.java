@@ -57,7 +57,4 @@ public class ControllerCliente {
 
     }
 
-    public static Cliente getCliente() {
-        return cliente;
-    }
 }

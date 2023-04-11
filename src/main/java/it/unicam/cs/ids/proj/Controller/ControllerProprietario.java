@@ -49,9 +49,6 @@ public class ControllerProprietario {
         MainView.selezioneModificaProgrammaFedelta();
     }
 
-    public static Proprietario getProprietario() {
-        return proprietario;
-    }
 }
 
 

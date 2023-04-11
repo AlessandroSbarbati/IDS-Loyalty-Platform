@@ -120,7 +120,7 @@ public class MainView {
                     ControllerStaff.rimozioneSaldoCashback(inserisciCodiceTessera(), inserisciCashbackDaRimuovere());
                     break;
                 case 5:
-                    ControllerStaff.aumentaLivello();
+                    ControllerStaff.aumentaLivello(inserisciCodiceTessera(),inserisciSpesaEffettuata());
                     break;
                 case 6:{
                     ControllerStaff.logoutStaff();
