@@ -24,13 +24,20 @@ public class AutenticazioneView {
             System.out.println("Premere 3 per uscire \n");
 
 
-            switch (provaScannerInt()) {
-                case 1 -> sceltaProfilo();
-                case 2 -> login();
-                case 3 -> flag=true;
+            switch (controlloScanner()) {
+                case 1 :
+                     sceltaProfilo();
+                     break;
+                case 2 :
+                     login();
+                     break;
+                case 3 :
+                    flag=true;
+                    break;
+                default: System.out.println("error");
             }
         }while(!flag);
-        System.out.println("buon proseguimento");
+        System.out.println("Arrivederci e grazie");
     }
 
     private static void login() throws SQLException {
@@ -41,11 +48,18 @@ public class AutenticazioneView {
             System.out.println("Premere 4 per tornare indietro \n");
 
 
-            switch (provaScannerInt()) {
-                case 1 -> ControllerCliente.loginCliente();
-                case 2 -> ControllerProprietario.loginProprietario();
-                case 3 -> ControllerStaff.loginStaff();
-                case 4 -> AutenticazioneView.accesso();
+            switch (controlloScanner()) {
+                case 1 :
+                    ControllerCliente.loginCliente();
+                     break;
+                case 2 :
+                    ControllerProprietario.loginProprietario();
+                    break;
+                case 3 :
+                    ControllerStaff.loginStaff();
+                    break;
+                case 4 : AutenticazioneView.accesso();
+
             }
 
     }
@@ -54,7 +68,7 @@ public class AutenticazioneView {
         System.out.println("Premere 1 per registrarti come cliente \n");
         System.out.println("Premere 2 per registrarti come proprietario \n");
 
-        switch (provaScannerInt()) {
+        switch (controlloScanner()) {
             case 1:
                 ControllerRegistrazione.nuovoCliente();
                 break;
@@ -112,7 +126,7 @@ public class AutenticazioneView {
         login();
     }
 
-    protected static int provaScannerInt() {
+    protected static int controlloScanner() {
         while (true) {
             try {
                 int intero = scanner.nextInt();
@@ -120,6 +134,9 @@ public class AutenticazioneView {
                 return intero;
             } catch (Exception e) {
                 System.out.println("Cio' che hai inserito non e' un valore numerico, ritenta ");
+                scanner.nextLine();
+                return 99;
+
             }
         }
     }

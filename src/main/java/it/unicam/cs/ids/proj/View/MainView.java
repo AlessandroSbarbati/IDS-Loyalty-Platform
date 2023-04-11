@@ -19,7 +19,7 @@ public class MainView {
             System.out.println("Premere 5 per modificare un programma fedeltà \n");
             System.out.println("Premere 6 per logout \n");
 
-            switch (AutenticazioneView.provaScannerInt()) {
+            switch (AutenticazioneView.controlloScanner()) {
                 case 1:
                     ControllerRegistrazione.nuovoPuntoVendita();
                     break;
@@ -49,7 +49,7 @@ public class MainView {
         System.out.println("Premere 2 per aggiungere un programma fedeltà cashback \n");
         System.out.println("Premere 3 per aggiungere un programma fedeltà VIP \n");
         System.out.println("Premere 4 per aggiungere un programma fedeltà a livelli \n");
-        switch (AutenticazioneView.provaScannerInt()) {
+        switch (AutenticazioneView.controlloScanner()) {
             case 1:
                 ControllerProgrammaFedelta.nuovoProgrammaPunti();
                 break;
@@ -74,7 +74,7 @@ public class MainView {
             System.out.println("Premere 3 per logout  \n");
 
 
-            switch (AutenticazioneView.provaScannerInt()) {
+            switch (AutenticazioneView.controlloScanner()) {
                 case 1:
                     ControllerCliente.aderisciProgramma();
                     break;
@@ -103,7 +103,7 @@ public class MainView {
             System.out.println("Premere 5 per aumentare il livello di un programma fedeltà  \n");
             System.out.println("Premere 6 per logout  \n");
 
-            switch (AutenticazioneView.provaScannerInt()) {
+            switch (AutenticazioneView.controlloScanner()) {
                 case 1:
                     ControllerStaff.inserisciPunti(inserisciCodiceCliente(), inserisciSpesaEffettuata());
                     break;
@@ -133,7 +133,7 @@ public class MainView {
         System.out.println("Premere 2 per modificare un programma fedeltà cashback \n");
         System.out.println("Premere 3 per modificare un programma fedeltà VIP \n");
         System.out.println("Premere 4 per modificare un programma fedeltà a livelli \n");
-        switch (AutenticazioneView.provaScannerInt()) {
+        switch (AutenticazioneView.controlloScanner()) {
             case 1:
                 ControllerProgrammaFedelta.nuovoProgrammaPunti();
                 break;
@@ -160,47 +160,47 @@ public class MainView {
 
     public static int inserisciValorePunti() {
         System.out.println("Inserisci il numero di punti da assegnare per ogni euro di spesa");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciValorePremio() {
         System.out.println("Inserisci il valore del premio riscattabile dal cliente");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciSogliaLivello(){
         System.out.println("Inserisci la soglia in euro per raggiungere il livello");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciScontoLivello(){
         System.out.println("Inserisci lo sconto da assegnare al livello");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciValoreCashback(){
         System.out.println("Inserisci la spesa da da effettuare per aggiungere 1 euro al tuo cashback");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciCodiceCliente() {
         System.out.println("Inserisci il codice del cliente : ");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     public static int inserisciSpesaEffettuata() {
         System.out.println("Inserisci la spesa effettuata dal cliente :");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     private static int inserisciPuntiDaRimuovere() {
         System.out.println("Inserisci il numero di punti da rimuovere :");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
     private static int inserisciCashbackDaRimuovere() {
         System.out.println("Inserisci il numero di euro nel cashback da rimuovere :");
-        return AutenticazioneView.provaScannerInt();
+        return AutenticazioneView.controlloScanner();
     }
 
 }
