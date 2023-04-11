@@ -105,16 +105,16 @@ public class MainView {
 
             switch (AutenticazioneView.controlloScanner()) {
                 case 1:
-                    ControllerStaff.inserisciPunti(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                    ControllerStaff.inserisciPunti(inserisciCodiceTessera(), inserisciSpesaEffettuata());
                     break;
                 case 2:
-                    ControllerStaff.rimuoviPunti(inserisciCodiceCliente(), inserisciPuntiDaRimuovere());
+                    ControllerStaff.rimuoviPunti(inserisciCodiceTessera(), inserisciPuntiDaRimuovere());
                     break;
                 case 3:
-                    ControllerStaff.accreditoCashback(inserisciCodiceCliente(), inserisciSpesaEffettuata());
+                    ControllerStaff.accreditoCashback(inserisciCodiceTessera(), inserisciSpesaEffettuata());
                     break;
                 case 4:
-                    ControllerStaff.rimozioneSaldoCashback(inserisciCodiceCliente(), inserisciCashbackDaRimuovere());
+                    ControllerStaff.rimozioneSaldoCashback(inserisciCodiceTessera(), inserisciCashbackDaRimuovere());
                     break;
                 case 5:
                     ControllerStaff.aumentaLivello();
@@ -183,7 +183,7 @@ public class MainView {
         return AutenticazioneView.controlloScanner();
     }
 
-    public static int inserisciCodiceCliente() {
+    public static int inserisciCodiceTessera() {
         System.out.println("Inserisci il codice del cliente : ");
         return AutenticazioneView.controlloScanner();
     }
