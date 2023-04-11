@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DBpiattaforma {
 
-    private final static String URL = "jdbc:mysql://localhost:3306/loyalitydb?";
+    private final static String URL = "jdbc:mysql://localhost:3306/piattaforma?";
     private final static String USER = "root";
-    private final static String PASSWORD = "Walixcamel12";
+    private final static String PASSWORD = "AleWalo1!";
     public static Connection conn;
 
     public static void init() {

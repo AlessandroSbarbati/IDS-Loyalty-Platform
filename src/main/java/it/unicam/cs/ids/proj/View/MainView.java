@@ -38,8 +38,8 @@ public class MainView {
                 case 6:{
                     ControllerProprietario.logoutProprietario();
                     flag = true;
-                }
-
+                } break;
+                default: System.out.println("error");
             }
         }while(!flag);
     }
@@ -61,6 +61,8 @@ public class MainView {
                 break;
             case 4:
                 ControllerProgrammaFedelta.nuovoProgrammaLivelli();
+                break;
+            default: System.out.println("error");
 
 
         }
@@ -84,7 +86,8 @@ public class MainView {
                 case 3:{
                     ControllerCliente.logoutCliente();
                     flag = true;
-                }
+                } break;
+                default: System.out.println("error");
 
 
             }
@@ -121,8 +124,8 @@ public class MainView {
                     break;
                 case 6:{
                     ControllerStaff.logoutStaff();
-                    flag=true;}
-
+                    flag=true;} break;
+                default: System.out.println("error");
                 }
 
         }while(!flag);
@@ -145,6 +148,8 @@ public class MainView {
                 break;
             case 4:
                 ControllerProgrammaFedelta.nuovoProgrammaLivelli();
+                break;
+            default: System.out.println("error");
         }
     }
 

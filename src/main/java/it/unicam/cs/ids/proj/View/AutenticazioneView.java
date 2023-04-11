@@ -59,7 +59,7 @@ public class AutenticazioneView {
                     ControllerStaff.loginStaff();
                     break;
                 case 4 : AutenticazioneView.accesso();
-
+                default: System.out.println("error");
             }
 
     }
@@ -74,6 +74,7 @@ public class AutenticazioneView {
                 break;
             case 2:
                 ControllerRegistrazione.nuovoProprietario();
+            default: System.out.println("error");
         }
     }
 
