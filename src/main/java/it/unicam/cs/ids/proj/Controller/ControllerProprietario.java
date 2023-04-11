@@ -49,10 +49,17 @@ public class ControllerProprietario {
         MainView.selezioneModificaProgrammaFedelta();
     }
 
-    public static Proprietario getProprietario() {
-        return proprietario;
-    }
-}
+    public static void visualizzaProgrammaFedeltaProprietario() throws SQLException {
+    int codiceAttivita = ControllerPuntoVendita.trovaPuntoVendita();
 
+    String nomeProgramma = "";
+        String query = "SELECT * from programmiFedelta where codiceAttivita = "
+                + codiceAttivita;
+        ResultSet rs = DBpiattaforma.executeQuery(query);
+        while (rs.next())
+        rs.getString("nome");
+    }
+
+}
 
 

@@ -98,7 +98,4 @@ public class ControllerStaff {
     public static void aumentaLivello() {
     }
 
-    public static Staff getStaff() {
-        return staff;
-    }
 }

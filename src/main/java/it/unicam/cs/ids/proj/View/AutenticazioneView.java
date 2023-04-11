@@ -108,7 +108,7 @@ public class AutenticazioneView {
     }
 
     public static String inserisciPartitaIVA() {
-        System.out.println(" Inserisci la tua partita iva : ");
+        System.out.println(" Inserisci la partita iva : ");
         return scanner.nextLine();
     }
 
@@ -125,6 +125,10 @@ public class AutenticazioneView {
     public static void erroreLogin() throws SQLException {
         System.out.println("Hai inserito le credenziali sbagliate");
         login();
+    }
+
+    public static void erroreRicerca() throws SQLException {
+        ControllerCliente.visualizzaProgrammaFedeltaCliente();
     }
 
     protected static int controlloScanner() {

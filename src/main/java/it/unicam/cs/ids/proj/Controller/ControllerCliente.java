@@ -30,7 +30,7 @@ public class ControllerCliente {
                     (rs.getString("email")),
                     (rs.getString("nomeUtente")),
                     (rs.getString("pwd")));
-        System.out.println(cliente.getNome() + cliente.getCognome());
+
         MainView.azioniClienti();
     }
     public static void logoutCliente(){
@@ -38,18 +38,26 @@ public class ControllerCliente {
     }
 
     public static void aderisciProgramma() throws SQLException {
+
+        String nome = ControllerProgrammaFedelta.trovaProgrammaFedelta();
+
         String query = "INSERT into programmiFedeltaClienti(punti, livello, depositoCashback,"
                 +      " codiceTessera, nomeProgramma) "
                 + "VALUES(" + 0 + "," + 0 + "," + 0 + "," + cliente.getCodiceTessera()
-                +  ",'" +  MainView.inserisciNomeProgramma() + "')";
+                +  ",'" +  nome + "')";
         DBpiattaforma.insertQuery(query);
     }
 
-    public static void visualizzaProgrammaFedelta() throws SQLException {
-        String query = "SELECT * from programmiFedeltaClienti where codiceTessera = '"
-                + cliente.getCodiceTessera() + "' and nome = '"
-                + MainView.inserisciNomeProgramma() + "'";
+    public static void visualizzaProgrammaFedeltaCliente() throws SQLException {
+
+        String nome = ControllerProgrammaFedelta.trovaProgrammaFedelta();
+
+        String query = "SELECT * from programmiFedeltaClienti where codiceTessera = "
+                + cliente.getCodiceTessera() + " and nome = '"
+                + nome + "'";
         ResultSet rs = DBpiattaforma.executeQuery(query);
+        if(!rs.isBeforeFirst()) {
+            AutenticazioneView.erroreRicerca();}
         while (rs.next())
         System.out.println("I tuoi punti in questo programma fedeltà sono :" +rs.getInt("punti"));
         System.out.println("Il tuo livello in questo programma fedeltà è :" +rs.getInt("livello"));
@@ -57,7 +65,4 @@ public class ControllerCliente {
 
     }
 
-    public static Cliente getCliente() {
-        return cliente;
-    }
 }

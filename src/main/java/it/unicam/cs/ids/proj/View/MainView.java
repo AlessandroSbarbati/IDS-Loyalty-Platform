@@ -81,7 +81,7 @@ public class MainView {
                     ControllerCliente.aderisciProgramma();
                     break;
                 case 2:
-                    ControllerCliente.visualizzaProgrammaFedelta();
+                    ControllerCliente.visualizzaProgrammaFedeltaCliente();
                     break;
                 case 3:{
                     ControllerCliente.logoutCliente();
