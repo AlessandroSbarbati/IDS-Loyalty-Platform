@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class ControllerStaff {
 
-    static Staff staff;
+    private static Staff staff;
 
 
     public static void loginStaff() throws SQLException {
@@ -97,5 +97,9 @@ public class ControllerStaff {
     }
 
     public static void aumentaLivello() {
+    }
+
+    public static Staff getStaff() {
+        return staff;
     }
 }

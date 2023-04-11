@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class ControllerProprietario {
 
-    static Proprietario proprietario;
+   private static Proprietario proprietario;
 
     public static void cancellaProgrammaFedelta() throws SQLException {
         String nomePF = MainView.inserisciNomeProgramma();
@@ -47,6 +47,10 @@ public class ControllerProprietario {
 
     public static void modificaProgrammaFedelta() throws SQLException{
         MainView.selezioneModificaProgrammaFedelta();
+    }
+
+    public static Proprietario getProprietario() {
+        return proprietario;
     }
 }
 

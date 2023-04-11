@@ -13,7 +13,7 @@ import java.sql.SQLException;
  */
 public class ControllerCliente {
 
-    static Cliente cliente;
+    private static Cliente cliente;
     public static void loginCliente() throws SQLException {
         String query = "SELECT * from clienti where nomeUtente = '"
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
@@ -57,4 +57,7 @@ public class ControllerCliente {
 
     }
 
+    public static Cliente getCliente() {
+        return cliente;
+    }
 }
