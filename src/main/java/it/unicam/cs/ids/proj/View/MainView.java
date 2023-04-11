@@ -158,10 +158,6 @@ public class MainView {
         return scanner.nextLine();
     }
 
-    /*public static String inserisciCodiceAttivitaProgramma() {
-        System.out.println(" Inserisci il codice del punto vendita da assegnare al programma fedeltà: ");
-        return scanner.nextLine();
-    }*/
 
     public static int inserisciValorePunti() {
         System.out.println("Inserisci il numero di punti da assegnare per ogni euro di spesa");
@@ -207,5 +203,7 @@ public class MainView {
         System.out.println("Inserisci il numero di euro nel cashback da rimuovere :");
         return AutenticazioneView.controlloScanner();
     }
-
+    public static void erroreRicerca() throws SQLException {
+        ControllerCliente.visualizzaProgrammaFedeltaCliente();
+    }
 }

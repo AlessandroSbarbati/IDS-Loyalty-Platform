@@ -26,6 +26,8 @@ public class ControllerPuntoVendita {
         return codiceAttivita;
     }
 
+    public void invioNotifiche(){
+    }
 
 
 }

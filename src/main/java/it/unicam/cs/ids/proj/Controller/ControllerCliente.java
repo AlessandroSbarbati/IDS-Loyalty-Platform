@@ -57,7 +57,7 @@ public class ControllerCliente {
                 + nome + "'";
         ResultSet rs = DBpiattaforma.executeQuery(query);
         if(!rs.isBeforeFirst()) {
-            AutenticazioneView.erroreRicerca();}
+            MainView.erroreRicerca();}
         while (rs.next())
         System.out.println("I tuoi punti in questo programma fedeltà sono :" +rs.getInt("punti"));
         System.out.println("Il tuo livello in questo programma fedeltà è :" +rs.getInt("livello"));

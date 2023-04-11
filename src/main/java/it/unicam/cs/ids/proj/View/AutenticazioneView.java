@@ -127,9 +127,6 @@ public class AutenticazioneView {
         login();
     }
 
-    public static void erroreRicerca() throws SQLException {
-        ControllerCliente.visualizzaProgrammaFedeltaCliente();
-    }
 
     protected static int controlloScanner() {
         while (true) {

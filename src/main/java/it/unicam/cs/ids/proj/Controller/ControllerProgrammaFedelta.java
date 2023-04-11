@@ -56,7 +56,8 @@ public class ControllerProgrammaFedelta {
         ResultSet rs = DBpiattaforma.executeQuery(query);
 
         if(!rs.isBeforeFirst()) {
-            System.out.println("Non esiste nessuna programma fedeltà con questo nome");}
+            System.out.println("Non esiste nessuna programma fedeltà con questo nome");
+            MainView.azioniClienti();}
 
         while(rs.next())
             nome = rs.getString("nome");
