@@ -50,10 +50,9 @@ public class ControllerProprietario {
     }
 
     public static void visualizzaProgrammaFedeltaProprietario() throws SQLException {
-    int codiceAttivita = ControllerPuntoVendita.trovaPuntoVendita();
 
-    String nomeProgramma = "";
-        String query = "SELECT * from programmiFedelta where codiceAttivita = "
+    int codiceAttivita = ControllerPuntoVendita.trovaPuntoVendita();
+    String query = "SELECT * from programmiFedelta where codiceAttivita = "
                 + codiceAttivita;
         ResultSet rs = DBpiattaforma.executeQuery(query);
         while (rs.next())

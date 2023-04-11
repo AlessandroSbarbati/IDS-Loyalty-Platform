@@ -2,7 +2,6 @@ package it.unicam.cs.ids.proj.Controller;
 
 import it.unicam.cs.ids.proj.DB.DBpiattaforma;
 import it.unicam.cs.ids.proj.View.AutenticazioneView;
-import it.unicam.cs.ids.proj.View.MainView;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
