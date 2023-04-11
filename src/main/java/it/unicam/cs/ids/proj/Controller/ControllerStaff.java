@@ -95,7 +95,8 @@ public class ControllerStaff {
         DBpiattaforma.insertQuery(query1);
     }
 
-    public static void aumentaLivello() {
+    public static void aumentaLivello(int codiceTessera, int spesa)throws SQLException {
+
     }
 
 }
