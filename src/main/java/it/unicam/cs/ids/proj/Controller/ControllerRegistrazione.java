@@ -18,7 +18,7 @@ public class ControllerRegistrazione {
      */
     public static void nuovoProprietario() throws SQLException {
 
-        String query = "INSERT into proprietari ( nome, cognome, residenza," +
+        String query = "INSERT into proprietario ( nome, cognome, residenza," +
                 " email, nomeUtente, pwd, partitaIVA) VALUES('"
                 + AutenticazioneView.inserisciNome()
                 + "','" + AutenticazioneView.inserisciCognome()

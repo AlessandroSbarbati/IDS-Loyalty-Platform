@@ -22,7 +22,7 @@ public class ControllerProprietario {
      */
     public static void loginProprietario() throws SQLException {
 
-        String query = "SELECT * from proprietari where nomeUtente = '"
+        String query = "SELECT * from proprietario where nomeUtente = '"
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
                 + AutenticazioneView.inserisciPassword() + "'";
         ResultSet rs = DBpiattaforma.executeQuery(query);

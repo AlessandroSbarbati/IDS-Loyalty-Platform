@@ -9,7 +9,7 @@ public class DBpiattaforma {
     /**
      * attributo che contiene la directory per il databse.
      */
-    private final static String URL = "jdbc:mysql://localhost:3306/piattaforma?";
+    private final static String URL = "jdbc:mysql://localhost:3306/loyalitydb?";
     /**
      * attributo che contiene il nome dello user.
      */
@@ -17,7 +17,7 @@ public class DBpiattaforma {
     /**
      * attributo che contiene la password per accedere al database.
      */
-    private final static String PASSWORD = "admin";
+    private final static String PASSWORD = "Walixcamel12";
     public static Connection conn;
 
     /**
