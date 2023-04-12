@@ -6,13 +6,16 @@ import it.unicam.cs.ids.proj.View.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+/** Questa classe ha il compito di contenere tutti i metodi per poter creare nuovi utenti,punti vendita o programmi fedeltà
+ *
+ *
+ */
 public class ControllerRegistrazione {
 
-
-    public ControllerRegistrazione() throws SQLException {
-    }
-
+    /** Questo metodo permette di creare un nuovo profilo proprietario.
+     *
+     * @throws SQLException
+     */
     public static void nuovoProprietario() throws SQLException {
 
         String query = "INSERT into proprietari ( nome, cognome, residenza," +
@@ -28,6 +31,10 @@ public class ControllerRegistrazione {
         DBpiattaforma.insertQuery(query);
     }
 
+    /** Questo metodo permette di creare un nuovo profilo cliente.
+     *
+     * @throws SQLException
+     */
     public static void nuovoCliente() throws SQLException {
         String query = "INSERT into clienti ( nome, cognome, residenza," +
                 " email, nomeUtente, pwd) VALUES('"
@@ -40,6 +47,10 @@ public class ControllerRegistrazione {
         DBpiattaforma.insertQuery(query);
     }
 
+    /** Questo metodo permette al proprietario di creare dei profili staff
+     *
+     * @throws SQLException
+     */
     public static void nuovoStaff() throws SQLException {
         int codiceAttivita = 0;
 
@@ -63,6 +74,11 @@ public class ControllerRegistrazione {
 
         DBpiattaforma.insertQuery(query1);
     }
+
+    /** Questo metodo permette al proprietario di creare un nuovo punto vendita nella piattaforma.
+     *
+     * @throws SQLException
+     */
     public static void nuovoPuntoVendita() throws SQLException {
 
         String query = "INSERT into PuntiVendita( nome, indirizzo, partitaIVA) VALUES('"
@@ -73,6 +89,11 @@ public class ControllerRegistrazione {
         DBpiattaforma.insertQuery(query);
     }
 
+    /** Metodo che permette al proprietario di creare un nuovo programma fedeltà
+     *
+     *
+     * @throws SQLException
+     */
     public static void nuovoProgrammaFedelta() throws SQLException {
 
         int codiceAttivita = 0;

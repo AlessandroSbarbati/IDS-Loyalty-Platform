@@ -8,6 +8,11 @@ import java.sql.SQLException;
 
 public class ControllerPuntoVendita {
 
+    /** Metodo che permette di
+     *
+     * @return
+     * @throws SQLException
+     */
     public static int trovaPuntoVendita() throws SQLException {
         int codiceAttivita = 0;
 

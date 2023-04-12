@@ -8,16 +8,18 @@ import it.unicam.cs.ids.proj.View.MainView;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** Classe che contiene tutti i metodi del proprietario
+ *
+ */
 public class ControllerProprietario {
 
    private static Proprietario proprietario;
 
-    public static void cancellaProgrammaFedelta() throws SQLException {
-        String nomePF = MainView.inserisciNomeProgramma();
-        String query = "delete from ProgrammiFedelta where nome = '" + nomePF + "'";
-        DBpiattaforma.insertQuery(query);
-    }
 
+    /** Metodo che permette al Proprietario di autenticarsi nella piattaforma.
+     *
+     * @throws SQLException
+     */
     public static void loginProprietario() throws SQLException {
 
         String query = "SELECT * from proprietari where nomeUtente = '"
@@ -41,10 +43,17 @@ public class ControllerProprietario {
         MainView.azioniProprietario();
     }
 
+    /**
+     * metodo logout
+     */
     public static void logoutProprietario(){
         proprietario = null;
     }
 
+    /** Metodo che permette al proprietare di modificare il programma fedeltà.
+     *
+     * @throws SQLException
+     */
     public static void modificaProgrammaFedelta() throws SQLException{
         MainView.selezioneModificaProgrammaFedelta();
     }
@@ -57,6 +66,16 @@ public class ControllerProprietario {
         ResultSet rs = DBpiattaforma.executeQuery(query);
         while (rs.next())
         rs.getString("nome");
+    }
+
+    /** Metodo che permette al proprietario di eliminare un programma fedeltà
+     *
+     * @throws SQLException
+     */
+    public static void cancellaProgrammaFedelta() throws SQLException {
+        String nomePF = MainView.inserisciNomeProgramma();
+        String query = "delete from ProgrammiFedelta where nome = '" + nomePF + "'";
+        DBpiattaforma.insertQuery(query);
     }
 
 }

@@ -8,11 +8,18 @@ import it.unicam.cs.ids.proj.View.MainView;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** Classe contiene tutti i metodi dello staff
+ *
+ */
 public class ControllerStaff {
 
     private static Staff staff;
 
 
+    /** Metodo che permette allo staff di autenticarsi nella piattaforma.
+     *
+     * @throws SQLException
+     */
     public static void loginStaff() throws SQLException {
 
         String query = "SELECT * from Staff where nomeUtente = '"
@@ -34,10 +41,20 @@ public class ControllerStaff {
                     (rs.getInt("id")));
         MainView.azioniStaff();
     }
+
+    /**
+     * metodo logout
+     */
     public static void logoutStaff(){
         staff=null;
     }
 
+    /** Metodo che permette allo staff di assegnare i punti ai clienti.
+     *
+     * @param codiceTessera
+     * @param spesa
+     * @throws SQLException
+     */
     public static void inserisciPunti(int codiceTessera, int spesa) throws SQLException {
         int puntiGuadagnati = 0;
         String query = " SELECT * from programmiFedelta where nome = '"
@@ -58,6 +75,12 @@ public class ControllerStaff {
             DBpiattaforma.insertQuery(query1);
     }
 
+    /** Metodo che permette allo staff di rimuovere i punti dai clienti.
+     *
+     * @param codiceTessera
+     * @param puntiRimossi
+     * @throws SQLException
+     */
     public static void rimuoviPunti(int codiceTessera, int puntiRimossi) throws SQLException {
 
         String query1 = "UPDATE programmiFedeltaClienti SET "
@@ -67,6 +90,12 @@ public class ControllerStaff {
         DBpiattaforma.insertQuery(query1);
     }
 
+    /** Metodo che permette allo staff di accreditare soldi cashback ai clienti.
+     *
+     * @param codiceTessera
+     * @param spesa
+     * @throws SQLException
+     */
     public static void accreditoCashback(int codiceTessera, int spesa) throws SQLException {
         int cashbackGuadagnato = 0;
         String query = " SELECT * from programmiFedelta where nome = '"
@@ -87,6 +116,12 @@ public class ControllerStaff {
         DBpiattaforma.insertQuery(query1);
     }
 
+    /** Metodo che permette allo staff di rimuovere soldi dal saldo dei clienti
+     *
+     * @param codiceTessera
+     * @param cashbackRimosso
+     * @throws SQLException
+     */
     public static void rimozioneSaldoCashback(int codiceTessera, int cashbackRimosso) throws SQLException {
         String query1 = "UPDATE programmiFedeltaClienti SET "
                 + " punti = punti - " + cashbackRimosso +
@@ -95,8 +130,14 @@ public class ControllerStaff {
         DBpiattaforma.insertQuery(query1);
     }
 
+    /** metodo non implementato
+     *
+     * @param codiceTessera
+     * @param spesa
+     * @throws SQLException
+     */
     public static void aumentaLivello(int codiceTessera, int spesa)throws SQLException {
-
+    //NON implementato
     }
 
 }

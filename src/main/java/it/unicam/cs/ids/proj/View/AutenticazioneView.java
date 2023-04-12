@@ -8,7 +8,7 @@ import it.unicam.cs.ids.proj.Controller.ControllerStaff;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-/**
+/** Classe che permette di accedere e registrarsi al programma fedeltà.
  *
  *
  */
@@ -16,6 +16,10 @@ public class AutenticazioneView {
 
     static Scanner scanner = new Scanner(System.in);
 
+    /** Metodo che permette di accedere al programma fedeltà.
+     *
+     * @throws SQLException
+     */
     public static void accesso() throws SQLException {
         boolean flag = false;
         do {
@@ -40,6 +44,10 @@ public class AutenticazioneView {
         System.out.println("Arrivederci e grazie");
     }
 
+    /** Metodo che permette di scegliere con quale profilo acceddere alla piattaforma.
+     *
+     * @throws SQLException
+     */
     private static void login() throws SQLException {
 
             System.out.println("Premere 1 per eseguire il login cliente \n");
@@ -64,6 +72,10 @@ public class AutenticazioneView {
 
     }
 
+    /** Metodo che permettere di scegliere con quale quale profilo registrarsi alla piattaforma.
+     *
+     * @throws SQLException
+     */
     private static void sceltaProfilo() throws SQLException {
         System.out.println("Premere 1 per registrarti come cliente \n");
         System.out.println("Premere 2 per registrarti come proprietario \n");
@@ -80,7 +92,10 @@ public class AutenticazioneView {
 
 
 
-
+    /** Metodo che permette di prendere in input dei dati
+     *
+     * @return
+     */
     public static String inserisciNome() {
         System.out.println(" Inserisci il nome : ");
         return scanner.nextLine();
@@ -127,7 +142,11 @@ public class AutenticazioneView {
         login();
     }
 
-
+    /** Metodo utilizzato per controllare che i valori inseriti siano di tipo int.
+     *
+     *
+     * @return
+     */
     protected static int controlloScanner() {
         while (true) {
             try {

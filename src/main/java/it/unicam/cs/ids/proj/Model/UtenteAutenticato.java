@@ -1,6 +1,6 @@
 package it.unicam.cs.ids.proj.Model;
 
-/**
+/** Classe Astratta che rappresenta utente autenticato nella piattaforma.
  *
  */
 public abstract class UtenteAutenticato implements iUtente {
@@ -12,7 +12,15 @@ public abstract class UtenteAutenticato implements iUtente {
    private String password;
 
 
-
+    /**Costruttore
+     *
+     * @param nome
+     * @param cognome
+     * @param residenza
+     * @param email
+     * @param nomeUtente
+     * @param password
+     */
     public UtenteAutenticato(String nome, String cognome,
                              String residenza, String email,
                              String nomeUtente, String password) {

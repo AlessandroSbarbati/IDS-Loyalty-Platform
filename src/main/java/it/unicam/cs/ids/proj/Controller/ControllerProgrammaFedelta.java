@@ -7,7 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ControllerProgrammaFedelta {
-
+    /** Metodo che permette al proprietario di creare un nuovo programma a punti.
+     *
+     * @throws SQLException
+     */
     public static void nuovoProgrammaPunti() throws SQLException {
         String nome = trovaProgrammaFedelta();
 
@@ -20,6 +23,10 @@ public class ControllerProgrammaFedelta {
         DBpiattaforma.insertQuery(query1);
     }
 
+    /** Metodo che permette al proprietario di creare un nuovo programma cashback.
+     *
+     * @throws SQLException
+     */
     public static void nuovoProgrammaCashback() throws SQLException{
         String nome = trovaProgrammaFedelta();
 
@@ -28,11 +35,17 @@ public class ControllerProgrammaFedelta {
                 + " WHERE nome = '" + nome + "'";
         DBpiattaforma.insertQuery(query1);
     }
-
+    /**
+     * metodo non implementato
+     */
     public static void nuovoProgrammaVIP() {
         System.out.println("Programma VIP non disponibile"); //NON IMPLEMENTATO!
     }
 
+    /** Metodo che permette al proprietario di creare un nuovo programma a livelli.
+     *
+     * @throws SQLException
+     */
     public static void nuovoProgrammaLivelli() throws SQLException{
         String nome = trovaProgrammaFedelta();
 
@@ -47,6 +60,12 @@ public class ControllerProgrammaFedelta {
         DBpiattaforma.insertQuery(query1);
     }
 
+    /** Metodo che controlla che i dati inseriti siano giusti cercando confronto nel databse.
+     *  Se i dati sono errati ti
+     *
+     * @return
+     * @throws SQLException
+     */
     public static String trovaProgrammaFedelta() throws SQLException {
         String nome = "";
 

@@ -8,12 +8,20 @@ import it.unicam.cs.ids.proj.View.MainView;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
+/**Classe che contiene tutti i metodi del del cliente
+ *
  * 
  */
 public class ControllerCliente {
-
+    /** Attributo che rappresenta un cliente al momento del login
+     *
+     */
     private static Cliente cliente;
+
+    /** Metodo che permette al cliete di autenticarsi nella piattaforma.
+     *
+     * @throws SQLException
+     */
     public static void loginCliente() throws SQLException {
         String query = "SELECT * from clienti where nomeUtente = '"
                 + AutenticazioneView.inserisciNomeUtente() + "' and pwd = '"
@@ -33,21 +41,33 @@ public class ControllerCliente {
 
         MainView.azioniClienti();
     }
+
+    /** Metodo logout
+     *
+     */
     public static void logoutCliente(){
         cliente=null;
     }
 
+    /** Metodo che permette al cliente di aderire ad un programma fedeltà
+     *
+     * @throws SQLException
+     */
     public static void aderisciProgramma() throws SQLException {
 
         String nome = ControllerProgrammaFedelta.trovaProgrammaFedelta();
 
         String query = "INSERT into programmiFedeltaClienti(punti, livello, depositoCashback,"
-                +      " codiceTessera, nomeProgramma) "
+                +      " codiceTessera, nomeProgramma,) "
                 + "VALUES(" + 0 + "," + 0 + "," + 0 + "," + cliente.getCodiceTessera()
                 +  ",'" +  nome + "')";
         DBpiattaforma.insertQuery(query);
     }
 
+    /** Metodo che permette al cliente di visualizzare gli eventuali punti raccolti, livello o il depositoCashback.
+     *
+     * @throws SQLException
+     */
     public static void visualizzaProgrammaFedeltaCliente() throws SQLException {
 
         String nome = ControllerProgrammaFedelta.trovaProgrammaFedelta();
